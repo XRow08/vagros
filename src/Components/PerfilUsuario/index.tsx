@@ -35,7 +35,7 @@ export default function PerfilUsuario(){
               <BtnRoxo>
                 <div className="flex gap-2">
                   <CircleYang></CircleYang>
-                  <h1 className="text-white font-Archivo text-md  leading-normal">MEUS CICLOS</h1>
+                  <h1 className="text-white font-Archivo text-md font-semibold leading-normal">MEUS CICLOS</h1>
                 </div>
               </BtnRoxo>
             </div>
