@@ -1,8 +1,8 @@
 import PurpleWord from "@/Components/PurpleWord";
 import YellowWord from "@/Components/YellowWord";
 
-export default function Roadmap(){
-  return(
+export default function Roadmap() {
+  return (
     <div className="flex justify-center w-full h-full bg-[url('/images/ROADMAPbg.png')] bg-cover bg-center">
       <div className="flex flex-col items-center gap-6 h-full mt-[120px]">
         <h1 className="text-white font-Archivo text-4xl pb-[10px] font-bold leading-9 tracking-wide letter-spacing-2">ROAD MAP</h1>
@@ -13,7 +13,7 @@ export default function Roadmap(){
           <div className="flex w-full gap-[200px]">
 
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] bg-[#212121] rounded-md px-4 py-2">
-              <h1><YellowWord>2023</YellowWord></h1>      
+              <h1><YellowWord>2023</YellowWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">2 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -26,7 +26,7 @@ export default function Roadmap(){
               </div>
             </div>
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
-              <h1><YellowWord>2023</YellowWord></h1>      
+              <h1><YellowWord>2023</YellowWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">3 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -43,7 +43,7 @@ export default function Roadmap(){
           <div className="flex w-full gap-[200px]">
 
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] bg-[#212121] rounded-md px-4 py-2">
-              <h1><YellowWord>2023</YellowWord></h1>      
+              <h1><YellowWord>2023</YellowWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">4 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -51,12 +51,11 @@ export default function Roadmap(){
                   <p className="text-white font-Archivo text-sm font-normal tracking-wide leading-normal letter-spacing-0.8">· INÍCIO MVP 2° CICLO</p>
                   <p className="text-white font-Archivo text-sm font-normal tracking-wide leading-normal letter-spacing-0.8">· MARKETING E ATUALIZAÇÃO DO CICLO</p>
                   <p className="text-white font-Archivo text-sm font-normal tracking-wide leading-normal letter-spacing-0.8">· FEEDBACK DE PRODUTORES USUÁRIOS E PARCEIROS</p>
-                  
                 </div>
               </div>
             </div>
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
-              <h1><YellowWord>2024</YellowWord></h1>      
+              <h1><YellowWord>2024</YellowWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">1 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -73,7 +72,7 @@ export default function Roadmap(){
           <div className="flex w-full gap-[200px]">
 
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] bg-[#212121] rounded-md px-4 py-2">
-              <h1><YellowWord>2024</YellowWord></h1>      
+              <h1><YellowWord>2024</YellowWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">2 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -85,7 +84,7 @@ export default function Roadmap(){
               </div>
             </div>
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
-              <h1><YellowWord>2024</YellowWord></h1>      
+              <h1><YellowWord>2024</YellowWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">3 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -97,7 +96,7 @@ export default function Roadmap(){
             </div>
 
           </div>
-          
+
 
         </div>
 
@@ -107,7 +106,7 @@ export default function Roadmap(){
           <div className="flex w-full gap-[200px]">
 
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] bg-[#212121] rounded-md px-4 py-2">
-              <h1><PurpleWord>2024</PurpleWord></h1>      
+              <h1><PurpleWord>2024</PurpleWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">4 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -119,7 +118,7 @@ export default function Roadmap(){
               </div>
             </div>
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
-              <h1><PurpleWord>2025</PurpleWord></h1>      
+              <h1><PurpleWord>2025</PurpleWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">1 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -134,7 +133,7 @@ export default function Roadmap(){
           <div className="flex w-full gap-[200px]">
 
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] bg-[#212121] rounded-md px-4 py-2">
-              <h1><PurpleWord>2025</PurpleWord></h1>      
+              <h1><PurpleWord>2025</PurpleWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">2 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -145,7 +144,7 @@ export default function Roadmap(){
               </div>
             </div>
             <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
-              <h1><PurpleWord>2026</PurpleWord></h1>      
+              <h1><PurpleWord>2026</PurpleWord></h1>
               <div className="flex flex-col gap-4 w-full h-full">
                 <h1 className="text-white font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.25">1 ° TRIMESTRE</h1>
                 <div className="flex flex-col gap-1">
@@ -158,7 +157,7 @@ export default function Roadmap(){
 
           </div>
 
-          
+
 
         </div>
 

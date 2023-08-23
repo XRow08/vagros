@@ -2,7 +2,6 @@ import CiclosViewPerfil from "@/Components/CiclosViewPerfil";
 import PerfilUsuario from "@/Components/PerfilUsuario";
 import ProgressBar from "@/Components/ProgressBar";
 import SearchBar from "@/Components/SearchBar";
-import Card3 from "@/Components/card3";
 
 export default function Usuario() {
   return (

@@ -1,5 +1,3 @@
-import BtnRoxo from "../BtnRoxo";
-import Grafico1 from "../Icons/Grafico1";
 import Heart from "../Icons/Heart";
 import Share from "../Icons/Share";
 import Star from "../Icons/Star";
@@ -8,13 +6,10 @@ export default function NftData() {
   return (
     <div className="flex flex-col w-full h-[280px] bg-white rounded-lg p-5 shadow-2xl">
       <div className="flex flex-col gap-4 w-full h-full">
-
-
         <div className="flex items-center justify-between">
           <h1 className="text-black font-Archivo text-2xl font-bold tracking-wide leading-normal letter-spacing-1.5">
             Nelore#2435
           </h1>
-
           <div className="flex items-center justify-between w-[25%]">
             <div className="bg-white shadow-xl rounded-[50%] p-2 cursor-pointer">
               <Heart></Heart>
@@ -28,9 +23,7 @@ export default function NftData() {
           </div>
         </div>
 
-
         <div className="flex flex-col w-[95%] border-gray-200 rounded-sm border-[1px] px-5 py-3">
-
           <div className="flex pb-3">
             <h1 className="text-black font-Archivo text-sm font-bold tracking-wide leading-normal letter-spacing-1">Preço atual:</h1>
           </div>

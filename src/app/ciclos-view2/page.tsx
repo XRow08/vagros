@@ -9,12 +9,12 @@ export default function CiclosView2(){
     <div className="flex flex-col items-center w-full h-full bg-white">
       <div className="flex items-center justify-between w-[80%] mt-[100px]">
 
-        <DetalhesVaca></DetalhesVaca>
-        <CiclosViewInfoSection></CiclosViewInfoSection>
+        <DetalhesVaca />
+        <CiclosViewInfoSection />
       </div>
 
       <div className="flex">
-        <AboutProject></AboutProject>
+        <AboutProject />
       </div>
     </div>
   )
