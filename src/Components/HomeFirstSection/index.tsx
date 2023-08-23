@@ -1,4 +1,4 @@
-import Card1 from "../Card1/Card1";
+import CiclosSection from "../CiclosSection";
 
 export default function HomeFirstSection() {
   return (
@@ -21,10 +21,7 @@ export default function HomeFirstSection() {
 
       <div className="flex flex-col items-center m-10 ">
         <div className="flex items-center gap-7 justify-between">
-          <Card1 />
-          <Card1 />
-          <Card1 />
-          <Card1 />
+          <CiclosSection />
         </div>
       </div>
     </div>

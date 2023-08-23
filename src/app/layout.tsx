@@ -1,9 +1,9 @@
 "use client"
-import { ChakraProvider } from '@chakra-ui/react'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Header } from '@/Components/Header'
 import Footer from '@/Components/Footer'
+import Modals from '@/Components/Modals'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className='bg-[#1E1E1E]'>
-          <Header />
-          {children}
+        <Modals />
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   )

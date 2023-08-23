@@ -1,7 +1,7 @@
 import Card1 from "../Card1/Card1";
 
 export default function CiclosSection() {
-  
+
   const data = [
     {
       live: true,

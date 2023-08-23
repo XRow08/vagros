@@ -5,16 +5,9 @@ import Grafico2 from "../Icons/Grafico2";
 import Relogio from "../Icons/Relogio";
 import Card1Item from "./Card1Item";
 import Circle from "../Icons/Circle";
+import { ICycle } from "@/interfaces/ICycles";
 
-type Props = {
-  item: {
-    live: boolean,
-    img: string,
-    title: string
-  }
-}
-
-export default function Card1({ item }: Props) {
+export default function Card1({ item }: { item: ICycle }) {
   return (
     <div className="flex flex-col justify-between rounded-xl shadow-2xl w-72 bg-white text-black ">
       <div className="relative">
