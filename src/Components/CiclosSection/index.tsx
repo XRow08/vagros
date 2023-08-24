@@ -13,6 +13,16 @@ export default function CiclosSection() {
       img: "/images/Vicon.svg",
       title: "Vagros 1 stake ciclo de produção"
     },
+    {
+      live: false,
+      img: "/images/Vicon.svg",
+      title: "Vagros 1 stake ciclo de produção"
+    },
+    {
+      live: false,
+      img: "/images/Vicon.svg",
+      title: "Vagros 1 stake ciclo de produção"
+    },
   ]
 
   return (

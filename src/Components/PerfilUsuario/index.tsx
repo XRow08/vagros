@@ -9,8 +9,7 @@ export default function PerfilUsuario(){
     <div className="bg-white relative flex flex-col items-center w-full">
       <div className="flex flex-col w-full">
 
-        <div className="flex relative bg-green-700 h-[300px] w-full shadow-2xl">
-
+        <div className="flex relative bg-[url('/images/PerfilBanner.jpg')] bg-cover bg-center h-[300px] w-full shadow-2xl">
           
           <div className="flex items-center justify-end absolute bottom-0 w-full h-[50px] bg-black bg-opacity-40">
             <div className="bg-white p-1 px-6 rounded-md mr-4 cursor-pointer">
@@ -21,8 +20,8 @@ export default function PerfilUsuario(){
 
         <div className="flex flex-col items-center justify-between pt-6 pb-8 gap-2 absolute rounded-xl border-black border-opacity-10 border-[1px] shadow-2xl  bg-white top-[160px] left-20 w-[300px] ">
 
-          <div className="flex flex-col shadow-2xl items-center rounded-[50%] border-[3px] border-white w-[130px] h-[130px] bg-green-500">
-            <img src="" alt="" />
+          <div className="flex flex-col shadow-2xl items-center rounded-[50%] border-[3px] border-white w-[130px] h-[130px] bg-[url('/images/PerfilFoto.jpg')] bg-cover bg-center">
+            
           </div>
 
           <div className="flex justify-center border-black border-opacity-20 pt-1 pb-3 border-b-[1px] w-[90%]">
