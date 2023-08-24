@@ -1,4 +1,5 @@
 import CiclosViewPerfil from "@/Components/CiclosViewPerfil";
+import ModalEditarPefil from "@/Components/ModalEditalPerfil";
 import ModalRetirarGanhos from "@/Components/ModalRetirarGanhos";
 import PerfilUsuario from "@/Components/PerfilUsuario";
 import ProgressBar from "@/Components/ProgressBar";
@@ -24,7 +25,6 @@ export default function Usuario() {
       </div>
 
 
-    <ModalRetirarGanhos></ModalRetirarGanhos>
     </div>
   );
 }
