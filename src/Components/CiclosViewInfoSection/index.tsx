@@ -110,7 +110,7 @@ export default function CiclosViewInfoSection() {
 
           </div>
 
-          <div className="flex w-[40%]">
+          <div className="flex w-[40%] h-[50px]">
             <BtnRoxo>PARTICIPAR DO CICLO</BtnRoxo>
           </div>
           

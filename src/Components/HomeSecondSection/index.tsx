@@ -17,7 +17,9 @@ export default function HomeSecondSection(){
                 <span className="text-justify">
                     <Text>Utilizando blockchain e contratos inteligentes, estamos construindo uma ponte para que qualquer pessoa possa interagir com o setor agropecuário, independentemente de seu espaço geográfico ou conhecimento sobre o assunto. Proporcionamos aos usuários uma identidade digital dentro de cada ciclo leiloado, oferecendo incentivos e benefícios a todos que contribuírem para um mundo melhor. Juntos, acreditamos na criação de uma comunidade capaz de contribuir na alimentação mundial. Junte-se a nós nessa jornada e faça parte da comunidade Vagros, onde cada ação conta para um futuro mais sustentável e uma alimentação mundial mais justa.</Text>
                 </span>
-                <BtnRoxo>CONHECER CICLOS</BtnRoxo>
+                <div className="w-[50%] h-[40px]">
+                  <BtnRoxo>CONHECER CICLOS</BtnRoxo>
+                </div>
             </div>
 
             <div className="absolute right-5 top-[1300px]">

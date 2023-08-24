@@ -1,4 +1,5 @@
 import CiclosViewPerfil from "@/Components/CiclosViewPerfil";
+import ModalComprarCotas from "@/Components/ModalComprarCotas";
 import ModalEditarPefil from "@/Components/ModalEditalPerfil";
 import ModalRetirarGanhos from "@/Components/ModalRetirarGanhos";
 import PerfilUsuario from "@/Components/PerfilUsuario";
@@ -24,7 +25,7 @@ export default function Usuario() {
 
       </div>
 
-
+      <ModalComprarCotas></ModalComprarCotas>
     </div>
   );
 }

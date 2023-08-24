@@ -45,10 +45,12 @@ export default function ModalComprarCotas() {
           </div>
 
           <div className="flex flex-col items-center text-white w-full">
-            <div className="flex flex-col shadow-xl w-[50%]">
-              <Link href="">
-                <BtnRoxo>SUPPLY USDT</BtnRoxo>
-              </Link>
+            <div className="flex flex-col shadow-xl w-[50%] h-[40px]">
+              <div className="w-full h-full">
+                <Link href="">
+                  <BtnRoxo>SUPPLY USDT</BtnRoxo>
+                </Link>
+              </div>
             </div>
           </div>
 
