@@ -9,6 +9,6 @@ export default function Arrow(){
       </linearGradient>
       </defs>
       </svg>
-      
+       
     )
 }
