@@ -9,9 +9,47 @@ import ProgressBar from "@/Components/ProgressBar";
 import SearchBar from "@/Components/SearchBar";
 
 export default function Usuario() {
+  const data = [
+    {
+      nftName: "Nelore#2540",
+      priceUsdt: "20",
+      priceBrl: "100",
+      address: "cro41.....9012",
+      date: {
+        days: "3",
+        hours: "5",
+        mins: "20",
+        segs: "53",
+      },
+    },
+    {
+      nftName: "Nelore#2540",
+      priceUsdt: "20",
+      priceBrl: "100",
+      address: "cro41.....9012",
+      date: {
+        days: "3",
+        hours: "5",
+        mins: "20",
+        segs: "53",
+      },
+    },
+    {
+      nftName: "Nelore#2540",
+      priceUsdt: "20",
+      priceBrl: "100",
+      address: "cro41.....9012",
+      date: {
+        days: "3",
+        hours: "5",
+        mins: "20",
+        segs: "53",
+      },
+    },
+  ];
+
   return (
     <div className="flex items-center flex-col bg-white w-full h-full">
-
       <div className="flex flex-col items-center w-full">
         <PerfilUsuario></PerfilUsuario>
 
@@ -22,35 +60,22 @@ export default function Usuario() {
                 Minhas NFTs
               </h1>
             </div>
-
           </div>
         </div>
 
-
         <div className="flex flex-col ml-[400px] items-center gap-14 bg-white pb-[30px]">
-              <div className="flex items-center gap-5">
-                <Card3Withdraw/>
-                <Card3Withdraw/>
-                <Card3Withdraw/>
-              </div>
-              <div className="flex items-center gap-5">
-                
-                <Card3/>
-                <Card3/>
-                <Card3/>
-              </div>
-              <div className="flex items-center gap-5">
-                
-                <Card3/>
-                <Card3/>
-                <Card3/>
-              </div>
-            </div>
-        
-      
+          <div className="flex items-center gap-5">
+            <Card3Withdraw />
+            <Card3Withdraw />
+            <Card3Withdraw />
+          </div>
+          <div className="flex items-center gap-5">
+            {data.map((item, index) => {
+              return <Card3 key={index} item={item} />;
+            })}
+          </div>
+        </div>
       </div>
-
-      
     </div>
   );
 }
