@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='bg-[#1E1E1E]'>
+      <body className='flex flex-col bg-[#1E1E1E] min-w-[1300px]'>
         <Modals />
         <Header />
         {children}

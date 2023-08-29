@@ -58,7 +58,7 @@ export default function HomeSecondSection() {
   const infoCard7 = data[6]
 
   return (
-    <div className="flex flex-col items-center  justify-between bg-[url('/images/background1.png')] bg-cover bg-center">
+    <div className="flex flex-col items-center w-full  justify-between bg-[url('/images/background1.png')] bg-cover bg-center">
       
       <div className="flex items-start gap-10 w-full mt-20">
         <div className="flex flex-col w-[40%] gap-10 ml-[5%]">
@@ -139,7 +139,7 @@ export default function HomeSecondSection() {
           </div>
         </Link>
 
-        <img src="/images/laptop.png" alt="" className="absolute right-0" />
+        <img src="/images/laptop.png" alt="" className="absolute right-0 z-0" />
       </div>
     </div>
   );
