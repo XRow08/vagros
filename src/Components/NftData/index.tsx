@@ -29,8 +29,14 @@ export default function NftData() {
           </div>
 
           <div className="flex items-center gap-3 py-3 border-y-[1px] border-gray-200">
-            <h1 className="text-black font-Archivo text-xl font-bold tracking-wide leading-normal letter-spacing-1.75">USDT: $ 477.00</h1>
-            <h1 className="text-black font-Archivo text-sm font-normal tracking-wide leading-normal letter-spacing-1">(BRL: R$ 100.00)</h1>
+          <div className="flex items-center gap-2">
+              <h1 className="text-black font-Archivo text-2xl font-bold tracking-wide leading-normal letter-spacing-1.75">USDT: $ 477.00</h1>
+              <img src="/images/usdt.png" alt="" />
+            </div>
+            <div className="flex items-center gap-2">
+              <h1 className="text-black font-Archivo text-md font-normal tracking-wide leading-normal letter-spacing-1">(BRL: R$ 100.00)</h1>
+              <img src="/images/brl.png" alt="" />
+            </div>
           </div>
 
 

@@ -3,7 +3,7 @@ import YellowWord from "@/Components/YellowWord";
 export default function AboutUs() {
   return (
     <div className="flex flex-col items-center w-full h-full py-4 bg-[#1E1E1E]">
-      <div className="flex items-center w-full justify-center h-full gap-10 mt-[120px]">
+      <div className="flex  w-[90%] justify-center h-full gap-10 mt-[120px]">
         
         <div className="flex flex-col gap-3 w-[60%] ">
           <div className="flex flex-col gap-1">
@@ -60,7 +60,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="flex w-[400px] h-[400px]">
+        <div className="flex w-[40%] ">
           <img src="/images/ImgAboutUs.png" className="w-full h-full" alt="" />
         </div>
 

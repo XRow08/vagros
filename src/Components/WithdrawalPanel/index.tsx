@@ -12,9 +12,6 @@ export default function WithdrawalPanel(){
           <h1 className="text-black font-Archivo text-2xl font-bold tracking-wide leading-normal letter-spacing-1.5">
             Nelore#2435
           </h1>
-          <div className="flex items-center justify-between w-[25%]">
-            
-          </div>
         </div>
 
         <div className="flex flex-col w-[95%] border-gray-200 rounded-sm border-[1px] px-5 py-3 mt-[15px]">
@@ -22,13 +19,20 @@ export default function WithdrawalPanel(){
             <h1 className="text-black font-Archivo text-sm font-bold tracking-wide leading-normal letter-spacing-1">Preço atual:</h1>
           </div>
 
-          <div className="flex items-center gap-3 py-10 mb-3 border-y-[1px] border-gray-200">
-            <h1 className="text-black font-Archivo text-3xl font-bold tracking-wide leading-normal letter-spacing-1.75">USDT: $ 477.00</h1>
-            <h1 className="text-black font-Archivo text-md font-normal tracking-wide leading-normal letter-spacing-1">(BRL: R$ 100.00)</h1>
+          <div className="flex items-center gap-4 py-10 mb-3 border-y-[1px] border-gray-200">
+            <div className="flex items-center gap-2">
+              <h1 className="text-black font-Archivo text-3xl font-bold tracking-wide leading-normal letter-spacing-1.75">USDT: $ 477.00</h1>
+              <img src="/images/usdt.png" alt="" />
+            </div>
+            <div className="flex items-center gap-2">
+              <h1 className="text-black font-Archivo text-md font-normal tracking-wide leading-normal letter-spacing-1">(BRL: R$ 100.00)</h1>
+              <img src="/images/brl.png" alt="" />
+            </div>
+
           </div>
 
 
-          <div className="w-[30%] h-[50px]">
+          <div className="w-[30%] h-[50px] my-2">
             <BtnRoxo>RETIRAR FUNDOS</BtnRoxo>
           </div>
         </div>
