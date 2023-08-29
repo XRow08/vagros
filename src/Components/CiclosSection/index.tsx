@@ -6,22 +6,38 @@ export default function CiclosSection() {
     {
       live: true,
       img: "/images/Vicon.svg",
-      title: "Vagros 1 stake ciclo de produção"
+      title: "Vagros 1 stake ciclo de produção",
+      stakeBeef: "20%",
+      minValue: "5.000,00",
+      cycleValue: "250.000,00",
+      prazo: "150"
     },
     {
       live: false,
       img: "/images/Vicon.svg",
-      title: "Vagros 1 stake ciclo de produção"
+      title: "Vagros 1 stake ciclo de produção",
+      stakeBeef: "20%",
+      minValue: "5.000,00",
+      cycleValue: "250.000,00",
+      prazo: "150"
+    },
+    {
+      live: true,
+      img: "/images/Vicon.svg",
+      title: "Vagros 1 stake ciclo de produção",
+      stakeBeef: "20%",
+      minValue: "5.000,00",
+      cycleValue: "250.000,00",
+      prazo: "150"
     },
     {
       live: false,
       img: "/images/Vicon.svg",
-      title: "Vagros 1 stake ciclo de produção"
-    },
-    {
-      live: false,
-      img: "/images/Vicon.svg",
-      title: "Vagros 1 stake ciclo de produção"
+      title: "Vagros 1 stake ciclo de produção",
+      stakeBeef: "20%",
+      minValue: "5.000,00",
+      cycleValue: "250.000,00",
+      prazo: "150"
     },
   ]
 

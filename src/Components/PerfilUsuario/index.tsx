@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BtnBranco from "../BtnBranco";
 import BtnRoxo from "../BtnRoxo";
 import CiclosViewInfo from "../CiclosViewInfo";
@@ -30,23 +31,27 @@ export default function PerfilUsuario(){
 
           <div className="flex flex-col mt-[5px] w-[90%] gap-4">
             
-            <div className="flex h-[40px] cursor-pointer">
-              <BtnRoxo>
-                <div className="flex gap-2">
-                  <CircleYang></CircleYang>
-                  <h1 className="text-white font-Archivo text-md font-semibold leading-normal">MEUS CICLOS</h1>
-                </div>
-              </BtnRoxo>
-            </div>
-
-            <div className="flex h-[40px] cursor-pointer">
-              <BtnBranco>
+            <Link href="/user">
+              <div className="flex h-[40px] cursor-pointer">
+                <BtnRoxo>
                   <div className="flex gap-2">
-                    <BolaQuadrado></BolaQuadrado>
-                    <h1 className="text-black font-Archivo text-md font-bold leading-normal">DASHBOARD</h1>
+                    <CircleYang></CircleYang>
+                    <h1 className="text-white font-Archivo text-md font-semibold leading-normal">MEUS CICLOS</h1>
                   </div>
-              </BtnBranco>
-            </div>
+                </BtnRoxo>
+              </div>
+            </Link>
+
+            <Link href="/userIncome">
+              <div className="flex h-[40px] cursor-pointer">
+                <BtnBranco>
+                    <div className="flex gap-2">
+                      <BolaQuadrado></BolaQuadrado>
+                      <h1 className="text-black font-Archivo text-md font-bold leading-normal">DASHBOARD</h1>
+                    </div>
+                </BtnBranco>
+              </div>
+            </Link>
           </div>
 
 

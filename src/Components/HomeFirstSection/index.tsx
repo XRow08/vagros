@@ -2,7 +2,7 @@ import CiclosSection from "../CiclosSection";
 
 export default function HomeFirstSection() {
   return (
-    <div className="flex flex-col items-center w-full bg-white shadow-xl ">
+    <div className="flex flex-col items-center w-full bg-white shadow-xl z-40">
 
       <div className="flex flex-col items-center w-[90%] ">
 
