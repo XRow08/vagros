@@ -91,7 +91,7 @@ export default function FormRebanho(){
               </div>
             </div>
           </div>
-          <div className="flex w-[40%] cursor-pointer">
+          <div className="flex w-[40%] h-[50px] cursor-pointer">
             <BtnRoxo>CONCLUIR E ENVIAR</BtnRoxo>
           </div>
         </div>

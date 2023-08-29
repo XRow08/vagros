@@ -31,7 +31,7 @@ export default function Card1({ item }: { item: ICycle }) {
           <div className="flex items-center gap-2"><div className="bg-white rounded-[50%] w-fit p-2 shadow-xl"><Diamond /></div><Card1Item /></div>
           <div className="flex items-center gap-2"><div className="bg-white rounded-[50%] w-fit p-2 shadow-xl"><Relogio /></div><Card1Item /></div>
         </div>
-        <Link href="/CiclosView">
+        <Link href="/ciclos-view">
           <div className="h-[53px] bg-gradient-to-r from-yellow-300 to-orange-500 flex items-center justify-center rounded-bl-[8px] rounded-br-[8px]">
             <h1 className="text-black font-archivo font-semibold text-18 leading-normal">DESCOBRIR MAIS</h1>
           </div>

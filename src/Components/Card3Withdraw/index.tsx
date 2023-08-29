@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BtnAmarelo from "../BtnAmarelo";
 import Polygon from "../Icons/Polygon";
 import Wallet from "../Icons/Wallet";
@@ -38,9 +39,11 @@ export default function Card3Withdraw() {
           <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">cro41.....9012</h1>
         </div>
 
-        <div className="h-[50px] rounded-b-md">
-        <BtnAmarelo><h1 className="text-black font-Archivo font-bold text-18 leading-normal tracking-wide">WITHDRAW</h1></BtnAmarelo>
-        </div>
+        <Link href="/withdrawal">
+          <div className="h-[50px] rounded-b-md">
+          <BtnAmarelo><h1 className="text-black font-Archivo font-bold text-18 leading-normal tracking-wide">WITHDRAW</h1></BtnAmarelo>
+          </div>
+        </Link>
       </div>
     </div>
   );

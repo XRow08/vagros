@@ -8,7 +8,7 @@ import ProgressBar from "../ProgressBar";
 
 export default function CiclosViewInfoSection() {
   return (
-    <div className="flex flex-col w-[60%] h-[470px] bg-white rounded-lg p-5  shadow-lg">
+    <div className="flex flex-col w-full h-[480px] bg-white rounded-lg p-5  shadow-lg">
       <div className="flex flex-col gap-4 w-full h-full">
         
         <h1 className="text-black font-Archivo text-2xl font-bold leading-normal tracking-wider">Vagros 1° stake ciclo de produção</h1>

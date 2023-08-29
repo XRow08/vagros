@@ -1,6 +1,7 @@
 import Image from "next/image";
 import CiclosViewInfo from "../CiclosViewInfo";
 import BtnRoxo from "../BtnRoxo";
+import Link from "next/link";
 
 export default function CiclosViewPerfil() {
   return (
@@ -35,7 +36,9 @@ export default function CiclosViewPerfil() {
               <CiclosViewInfo />
 
               <div className="flex w-[30%] h-[50px]">
-                <BtnRoxo>VISUALIZAR LEILÃO</BtnRoxo>
+                <Link href="ciclos-view2" className="w-full">
+                  <BtnRoxo>VISUALIZAR LEILÃO</BtnRoxo>
+                </Link>
               </div>
             </div>
 

@@ -7,7 +7,7 @@ import ConectarWalletPrimeiro from "@/Components/Notificacoes/Informacoes/Conect
 export default function FormParceiros(){
   return(
     <div className="flex flex-col items-center fixed w-screen h-screen inset-0 pt-[100px] bg-[url('/images/FormParceirosBg.png')] bg-cover bg-center backdrop-filter backdrop-blur-md">
-           <WalletNaoConectada></WalletNaoConectada>
+           <FormInfoPessoal></FormInfoPessoal>
     </div>
   )
 }

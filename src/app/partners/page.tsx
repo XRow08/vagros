@@ -1,5 +1,6 @@
 import BtnRoxo from "@/Components/BtnRoxo";
 import YellowWord from "@/Components/YellowWord";
+import Link from "next/link";
 
 export default function Parceiros() {
   return (
@@ -25,9 +26,13 @@ export default function Parceiros() {
             </div>
 
             <div className="flex flex-col items-center bg-[#212121] w-full h-full mt-4">
-              <div className="flex w-[90%]">
-                <BtnRoxo><h1 className="text-white font-Archivo text-sm leading-normal">LEILOAR MEU REBANHO</h1></BtnRoxo>
-              </div>
+              
+                <div className="flex w-[90%] h-[50px]">
+                <Link href="/form-partners" className="w-full">
+                  <BtnRoxo><h1 className="text-white font-Archivo text-sm leading-normal">LEILOAR MEU REBANHO</h1></BtnRoxo>
+                </Link>
+                </div>
+              
             </div>
 
           </div>

@@ -1,7 +1,7 @@
 export default function AboutProject() {
   return (
     <div className="flex flex-col items-center text-black pt-[50px]">
-      <div className="flex flex-col w-[80%] gap-5">
+      <div className="flex flex-col w-[90%] gap-5">
         <h1 className="text-black font-Archivo text-2xl font-bold leading-normal tracking-wider">
           Sobre o projeto
         </h1>

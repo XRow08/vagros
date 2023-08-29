@@ -7,9 +7,12 @@ import ModalConectarCarteira from "@/Components/ModalConectarCarteira";
 export default function CiclosView2(){
   return(
     <div className="flex flex-col items-center w-full h-full bg-white">
-      <div className="flex items-center justify-between w-[80%] mt-[100px]">
+      <div className="flex w-[90%] mt-[100px] gap-10">
 
-        <DetalhesVaca />
+        <div className="w-[50%]">
+          <DetalhesVaca />
+        </div>
+
         <CiclosViewInfoSection />
       </div>
 

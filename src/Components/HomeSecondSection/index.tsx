@@ -131,7 +131,7 @@ export default function HomeSecondSection() {
           </Title>
         </div>
 
-        <Link href="">
+        <Link href="/partners">
           <div className="flex bg-gradient-to-r  w-full from-yellow-300 to-orange-500  filter drop-shadow-lg backdrop-blur-xl rounded-lg p-3 pl-10 pr-10 cursor-pointer">
             <h1 className="text-black font-archivo text-base font-bold">
               REALIZAR LEILÃO
