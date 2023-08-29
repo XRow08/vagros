@@ -25,7 +25,7 @@ export default function CiclosViewPerfil() {
 
         <div className="w-full justify-between">
 
-          <div className="flex flex-col ml-[320px] mr-[5%] h-[100px]">
+          <div className="flex flex-col ml-[5%] md:ml-[350px] mr-[5%] h-[100px]">
             
             <h1 className="text-black font-archivo text-2xl font-bold leading-normal tracking-wider mt-[10px]">
               Vagros 1° stake ciclo de produção
