@@ -22,12 +22,12 @@ export default function Card3Withdraw() {
 
         <div className="flex items-center justify-between mr-[5%] ml-[5%]">
 
-          <div className="flex items-center justify-between shadow-xl my-2 py-1 w-[40%]">
+          <div className="flex items-center justify-between shadow-xl my-2 border-gray-100 rounded-md p-1 w-[40%]">
             <h1 className="text-black font-Archivo text-14 font-normal leading-normal tracking-wider">USDT</h1>
             <h2 className="text-black font-Archivo text-16 font-normal leading-normal tracking-wider">$20</h2>
           </div>
 
-          <div className="flex items-center justify-between shadow-xl my-2 py-1 w-[40%]">
+          <div className="flex items-center justify-between shadow-xl my-2 border-gray-100 rounded-md p-1 w-[40%]">
             <h1 className="text-black font-Archivo text-14 font-normal leading-normal tracking-wider">BRL</h1>
             <h2 className="text-black font-Archivo text-16 font-normal leading-normal tracking-wider">R$100</h2>
           </div>
