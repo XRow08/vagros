@@ -1,7 +1,7 @@
 export default function SearchBar(){
   return(
     <div className="flex flex-col items-center w-full bg-white pb-[30px] pt-[30px] ">
-      <div className="flex flex-col w-[80%] shadow-xl rounded-md">
+      <div className="flex flex-col w-[90%] shadow-xl rounded-md">
         <form>
           <div className="relative">
 

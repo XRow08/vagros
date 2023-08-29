@@ -11,7 +11,7 @@ export default function MenuItens(){
             <Link href="/Roadmap">
                 <MenuItem>ROAD MAP</MenuItem>
             </Link>
-            <Link href="/AboutUs">
+            <Link href="/about-us">
                 <MenuItem>QUEM SOMOS</MenuItem>
             </Link>
             

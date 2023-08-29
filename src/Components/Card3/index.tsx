@@ -3,12 +3,12 @@ import Wallet from "../Icons/Wallet";
 
 export default function Card3() {
   return (
-    <div className="flex flex-col  bg-white w-[350px] h-[300px] rounded-lg  shadow-2xl ">
-      <div className="flex flex-col  text-black h-full shadow-2xl">
+    <div className="flex flex-col  bg-white w-full min-w-[280px] h-full rounded-lg  shadow-2xl ">
+      <div className="flex flex-col  text-black w-full h-full shadow-2xl">
 
-        <div className="w-full h-[50%] relative">
+        <div className="w-full relative">
           <img src="/images/Vicon.svg" className="absolute right-2 p-1 pt-2" alt="" />
-          <img src="/images/vaquinha2.png" className="h-full w-full rounded-t-lg" alt="" />
+          <div><img src="/images/vaquinha2.png" className="max-h-[130px] w-full cover rounded-t-lg" alt="" /></div>
         </div>
 
         <div className="flex items-center justify-between py-1 mr-[5%] ml-[5%]">
