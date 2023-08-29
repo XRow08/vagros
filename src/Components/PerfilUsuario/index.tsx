@@ -1,3 +1,5 @@
+'use client'
+import { useState } from "react";
 import Link from "next/link";
 import BtnBranco from "../BtnBranco";
 import BtnRoxo from "../BtnRoxo";
@@ -6,6 +8,7 @@ import BolaQuadrado from "../Icons/BolaQuadrado";
 import CircleYang from "../Icons/CircleYang";
 
 export default function PerfilUsuario(){
+  const [active, setActive] = useState(false)
   return(
     <div className="bg-white relative flex flex-col items-center w-full">
       <div className="flex flex-col w-full">
@@ -32,7 +35,7 @@ export default function PerfilUsuario(){
           <div className="flex flex-col mt-[5px] w-[90%] gap-4">
             
             <Link href="/user">
-              <div className="flex h-[40px] cursor-pointer">
+              <div onClick={() => setActive(!active)} className="flex h-[40px] cursor-pointer">
                 <BtnRoxo>
                   <div className="flex gap-2">
                     <CircleYang></CircleYang>
@@ -43,7 +46,7 @@ export default function PerfilUsuario(){
             </Link>
 
             <Link href="/userIncome">
-              <div className="flex h-[40px] cursor-pointer">
+              <div onClick={() => setActive(active)} className="flex h-[40px] cursor-pointer">
                 <BtnBranco>
                     <div className="flex gap-2">
                       <BolaQuadrado></BolaQuadrado>
