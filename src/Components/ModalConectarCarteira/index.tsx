@@ -1,6 +1,7 @@
 import { useModalStore } from "@/stores/modalStore";
 import Metamask from "../Icons/Metamask";
 import X from "../Icons/X";
+import Link from "next/link";
 
 export default function ModalConectarCarteira() {
   const { setShowModalWallet } = useModalStore()
@@ -17,7 +18,7 @@ export default function ModalConectarCarteira() {
           </div>
 
           <div className="">
-            <h1 className="text-black font-Archivo text-md font-normal leading-normal tracking-wider">Conectando sua wallet, você vai ter o acesso completo a toda plataforma Vagros.<span className="text-blue-500"> Saiba mais...</span></h1>
+            <h1 className="text-black font-Archivo text-md font-normal leading-normal tracking-wider">Conectando sua wallet, você vai ter o acesso completo a toda plataforma Vagros.<Link href="/create-wallet" onClick={() => setShowModalWallet(false)}><span className="text-blue-500"> Saiba mais...</span></Link></h1>
           </div>
 
         </div>
