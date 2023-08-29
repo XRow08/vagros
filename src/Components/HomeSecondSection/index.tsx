@@ -58,9 +58,10 @@ export default function HomeSecondSection() {
   const infoCard7 = data[6]
 
   return (
-    <div className="flex flex-col items-center w-full  justify-between bg-[url('/images/background1.png')] bg-cover bg-center">
+    <div className="flex flex-col items-center w-full justify-between bg-[url('/images/background1.png')] bg-cover bg-center">
       
-      <div className="flex items-start gap-10 w-full mt-20">
+      <div className="flex items-start relative gap-10 w-full mt-20">
+
         <div className="flex flex-col w-[40%] gap-10 ml-[5%]">
           <Title>
             MAIOR <PurpleWord>ECOSSISTEMA</PurpleWord> DE PRODUÇÃO DE ALIMENTOS
@@ -84,15 +85,17 @@ export default function HomeSecondSection() {
           </div>
         </div>
 
-      </div>
-
-      <div className="absolute right-5 top-[1300px]">
+        <div className="absolute right-0 mt-[-13rem] top-0">
         <img
           src="/images/Logo Vagros.png"
-          className="w-[800px] h-auto"
+          className="w-[800px]"
           alt=""
         />
       </div>
+
+      </div>
+
+      
 
       <div className="flex flex-col items-center mt-28">
         <div className="flex flex-col w-[40%] text-center gap-3">
@@ -124,7 +127,7 @@ export default function HomeSecondSection() {
         <Card2 item={infoCard7}/> 
       </div>
 
-      <div className="flex flex-col w-full items-start m-10 pl-[5%] mt-20 gap-5 h-[600px]">
+      <div className="flex flex-col relative w-full items-start m-10 pl-[5%] mt-20 gap-5 h-[600px]">
         <div className="flex w-[30%] ">
           <Title>
             APOIE O ECOSSISTEMA <YellowWord>LEILOANDO</YellowWord> SEU REBANHO
@@ -139,7 +142,7 @@ export default function HomeSecondSection() {
           </div>
         </Link>
 
-        <img src="/images/laptop.png" alt="" className="absolute right-0 z-0" />
+        <img src="/images/laptop.png" alt="" className="absolute right-0 top-0 z-0" />
       </div>
     </div>
   );

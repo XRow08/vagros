@@ -2,8 +2,8 @@ import YellowWord from "@/Components/YellowWord";
 
 export default function AboutUs() {
   return (
-    <div className="flex flex-col items-center w-full h-full py-4 bg-[#1E1E1E]">
-      <div className="flex  w-[90%] justify-center h-full gap-10 mt-[120px]">
+    <div className="flex flex-col items-center w-full min-h-screen py-4 bg-[#1E1E1E]">
+      <div className="flex  w-[90%] justify-center h-full gap-10 mt-[120px] px-20">
         
         <div className="flex flex-col gap-3 w-[60%] ">
           <div className="flex flex-col gap-1">
@@ -60,8 +60,8 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="flex w-[40%] ">
-          <img src="/images/ImgAboutUs.png" className="w-full h-full" alt="" />
+        <div className="flex w-[40%] h-full">
+          <img src="/images/ImgAboutUs.png" className="w-full h-full object-cover" alt="" />
         </div>
 
 

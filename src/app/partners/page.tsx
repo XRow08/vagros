@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export default function Parceiros() {
   return (
-    <div className=" flex flex-col items-center fixed w-screen h-screen inset-0 bg-[url('/images/ParceirosBanner.png')] bg-cover bg-center backdrop-filter backdrop-blur-md">
+    <div className=" flex flex-col items-center justify-center min-h-screen inset-0 bg-[url('/images/ParceirosBanner.png')] bg-cover bg-center backdrop-filter backdrop-blur-md">
       <div className="flex flex-col items-center w-[70%] h-full">
 
-        <div className="flex items-center justify-between text-white mt-[150px]">
+        <div className="flex items-center justify-between text-white">
 
           <div className="flex flex-col gap-3 w-[50%]">
             <h1 className="text-white font-Archivo font-bold text-3xl leading-normal tracking-wider">CONECTE-SE COM A <YellowWord>VAGROS</YellowWord> E REALIZE SEU LEILÃO</h1>
@@ -25,7 +25,7 @@ export default function Parceiros() {
               <h1 className="absolute bottom-3 text-white font-Archivo text-xl font-semibold leading-normal tracking-wide">ÁREA DO PRODUTOR</h1>
             </div>
 
-            <div className="flex flex-col items-center bg-[#212121] w-full h-full mt-4">
+            <div className="flex flex-col items-center bg-[#212121] w-full h-full py-1">
               
                 <div className="flex w-[90%] h-[50px]">
                 <Link href="/form-partners" className="w-full">

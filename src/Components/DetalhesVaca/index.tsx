@@ -1,6 +1,5 @@
-import ArrowDown from "../Icons/ArrowDown";
 import Circle from "../Icons/Circle";
-import IdCard from "../Icons/IdCard";
+import { Details } from "./Details";
 
 export default function DetalhesVaca(){
   
@@ -22,16 +21,7 @@ export default function DetalhesVaca(){
 
         </div>
 
-        <div className="flex items-center justify-between mt-[15px] p-3 px-4 w-full bg-white rounded-lg shadow-2xl">
-
-            <div className="flex items-center gap-2">
-              <IdCard/>
-              <h1 className="text-black font-Archivo text-18 font-semibold leading-normal">Detalhes</h1>
-            </div>
-
-            <ArrowDown/>
-          
-        </div>
+        <Details></Details>
 
       </div>
 
