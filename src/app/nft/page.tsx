@@ -67,7 +67,7 @@ export default function NftView() {
 
           <div className="flex flex-col w-[60%] gap-6">
             <NftData />
-            <NftChart />
+            
           </div>
         </div>
 

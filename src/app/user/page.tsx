@@ -9,6 +9,9 @@ import { useState } from "react";
 export default function Usuario() {
   const [activeCycles, setActiveCycles] = useState(true);
   const [activeDashboard, setActiveDashboard] = useState(false);
+  const [enterCycles, setEnterCycles] = useState(false);
+  const [enterDashboard, setEnterDashboard] = useState(false);
+
 
   const data = [
     {
@@ -75,6 +78,7 @@ export default function Usuario() {
 
               <div className="flex flex-col mt-[5px] w-[90%] gap-4">
                 <div
+                onMouseEnter={() => setEnterCycles(true)} onMouseLeave={() => setEnterCycles(false)}
                   onClick={() => {
                     if (setActiveDashboard) {
                       setActiveDashboard(false);
@@ -84,19 +88,22 @@ export default function Usuario() {
                   }}
                   className="flex h-[40px] cursor-pointer"
                 >
-                  <BtnPerfil state={activeCycles}>
-                    <div className="flex gap-2">
-                      <CircleYang
-                        color={activeCycles ? "white" : "black"}
-                      ></CircleYang>
-                      <h1 className=" font-Archivo text-md font-bold leading-normal">
-                        MEUS CICLOS
-                      </h1>
-                    </div>
-                  </BtnPerfil>
+                  
+                    <BtnPerfil state={activeCycles}>
+                      <div className="flex gap-2">
+                        <CircleYang
+                          color={activeCycles ? "white" : enterCycles ? "white" : "black"}
+                        ></CircleYang>
+                        <h1 className=" font-Archivo text-md font-bold leading-normal">
+                          MEUS CICLOS
+                        </h1>
+                      </div>
+                    </BtnPerfil>
+                  
                 </div>
 
                 <div
+                onMouseEnter={() => setEnterDashboard(true)} onMouseLeave={() => setEnterDashboard(false)}
                   onClick={() => {
                     if (activeCycles) {
                       setActiveCycles(false);
@@ -108,13 +115,14 @@ export default function Usuario() {
                   <BtnPerfil state={activeDashboard}>
                     <div className="flex w-full h-full  gap-2">
                       <BolaQuadrado
-                        color={activeDashboard ? "white" : "black"}
+                        color={activeDashboard ? "white" : enterDashboard ? "white" : "black"}
                       ></BolaQuadrado>
                       <h1 className="font-Archivo text-md font-bold leading-normal">
                         DASHBOARD
                       </h1>
                     </div>
                   </BtnPerfil>
+
                 </div>
               </div>
             </div>
@@ -192,18 +200,7 @@ export default function Usuario() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="w-full">
-              <div className="flex items-center gap-10 ml-[400px] mr-4 mb-40">
-                <div className="bg-green-700 w-[70%] h-[200px] rounded-md"></div>
-                <div className="bg-white w-[30%] h-[200px] rounded-md shadow-2xl px-8 py-4 border-[1px] border-gray-200">
-                  <h1 className="text-black font-Archivo text-xl font-bold leading-normal tracking-wider">
-                    Novos ciclos
-                  </h1>
-                </div>
-              </div>
-            </div>
+            </div>   
           </div>
         ) : (
           ""
