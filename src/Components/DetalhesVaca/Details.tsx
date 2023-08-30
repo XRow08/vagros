@@ -6,8 +6,6 @@ import Books from "../Icons/Books";
 
 export function Details(){
   const [open, setOpen] = useState(false)
-  
-  
   const estado1= "flex flex-col items-center justify-between mt-[15px] p-3 px-4 w-full bg-white rounded-lg shadow-2xl transition-all duration-300 ease-in-out"
   const estado2= "flex flex-col items-center justify-between mt-[15px] p-3 px-4 w-full h-[300px] bg-white rounded-lg shadow-2xl transition-all duration-300 ease-in-out"
   
