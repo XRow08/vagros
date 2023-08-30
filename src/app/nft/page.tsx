@@ -4,6 +4,17 @@ import NftData from "@/Components/NftData";
 import Card3 from "@/Components/Card3";
 
 export default function NftView() {
+  const nftData = {
+    name: "Nelore#2435",
+    usdtPrice: "477.00",
+    brlPrice: "100.00",
+    date: {
+      days: "3",
+      hours: "5",
+      mins: "20",
+      segs: "53"
+    }
+  }
   const data = [
     {
       nftName: "Nelore#2540",
@@ -66,7 +77,7 @@ export default function NftView() {
           </div>
 
           <div className="flex flex-col w-[60%] gap-6">
-            <NftData />
+            <NftData item={nftData}/>
             
           </div>
         </div>

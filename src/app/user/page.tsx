@@ -12,6 +12,14 @@ export default function Usuario() {
   const [enterCycles, setEnterCycles] = useState(false);
   const [enterDashboard, setEnterDashboard] = useState(false);
 
+  const nome = "Alice Alves"
+
+  const rendimentos = {
+    fornecimento: "125.000,00",
+    ganhos: "50.000,00",
+    stake: "100.000,00",
+    totalRetirada: "25.000,00"
+  }
 
   const data = [
     {
@@ -72,7 +80,7 @@ export default function Usuario() {
 
               <div className="flex justify-center border-black border-opacity-20 pt-1 pb-3 border-b-[1px] w-[90%]">
                 <h1 className="text-black font-Archivo text-xl font-medium tracking-wide leading-normal letter-spacing-1">
-                  Alice Alves
+                  {nome}
                 </h1>
               </div>
 
@@ -165,7 +173,7 @@ export default function Usuario() {
                       Fornecimento total
                     </h1>
                     <h1 className="text-white font-Archivo text-lg font-bold tracking-wide leading-normal letter-spacing-1.05">
-                      USDT 125.000,00
+                      USDT {rendimentos.fornecimento}
                     </h1>
                   </div>
                 </div>
@@ -175,7 +183,7 @@ export default function Usuario() {
                       Ganhos após ciclos
                     </h1>
                     <h1 className="text-white font-Archivo text-lg font-bold tracking-wide leading-normal letter-spacing-1.05">
-                      USDT 50.000,00
+                      USDT {rendimentos.ganhos}
                     </h1>
                   </div>
                 </div>
@@ -185,7 +193,7 @@ export default function Usuario() {
                       Stake ciclo bloqueado
                     </h1>
                     <h1 className="text-white font-Archivo text-lg font-bold tracking-wide leading-normal letter-spacing-1.05">
-                      USDT 100.000,00
+                      USDT {rendimentos.stake}
                     </h1>
                   </div>
                 </div>
@@ -195,7 +203,7 @@ export default function Usuario() {
                       Total para retirada
                     </h1>
                     <h1 className="text-white font-Archivo text-lg font-bold tracking-wide leading-normal letter-spacing-1.05">
-                      USDT 25.000,00
+                      USDT {rendimentos.totalRetirada}
                     </h1>
                   </div>
                 </div>

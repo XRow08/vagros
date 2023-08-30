@@ -2,8 +2,9 @@ import Image from "next/image";
 import CiclosViewInfo from "../CiclosViewInfo";
 import BtnRoxo from "../BtnRoxo";
 import Link from "next/link";
+import { ICiclosViewPerfil } from "@/interfaces/ICiclosViewPerfil";
 
-export default function CiclosViewPerfil() {
+export default function CiclosViewPerfil({ item }: { item: ICiclosViewPerfil }) {
   return (
     <div className="bg-white relative flex flex-col items-center h-[440px] w-full">
       <div className="flex flex-col w-full">
@@ -29,13 +30,13 @@ export default function CiclosViewPerfil() {
           <div className="flex flex-col ml-[calc(5%+250px)] mr-[5%] h-[100px]">
             
             <h1 className="text-black font-archivo text-2xl font-bold leading-normal tracking-wider mt-[10px]">
-              Vagros 1° stake ciclo de produção
+              {item.title}
             </h1>
 
             <div className="flex w-full justify-between items-center">
               <CiclosViewInfo />
 
-              <div className="flex w-[30%] h-[50px]">
+              <div className="flex w-[25%] h-[50px]">
                 <Link href="ciclos-view2" className="w-full">
                   <BtnRoxo>VISUALIZAR LEILÃO</BtnRoxo>
                 </Link>

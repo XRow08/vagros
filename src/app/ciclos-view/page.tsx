@@ -5,6 +5,9 @@ import SearchBar from "@/Components/SearchBar";
 import Card3 from "@/Components/Card3";
 
 export default function CiclosView(){
+  const dataCiclosViewPerfil = {
+    title: "Vagros 1° stake ciclo de produção"
+  }
   const data = [
     {
       nftName: "Nelore#2540",
@@ -60,7 +63,7 @@ export default function CiclosView(){
 
     return(
         <div className="flex items-center flex-col bg-white ">
-            <CiclosViewPerfil/>
+            <CiclosViewPerfil item={dataCiclosViewPerfil}/>
             
             <div className="flex flex-col relative w-[90%] mt-[20px] pb-[20px]">
               <ProgressBar/>

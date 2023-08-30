@@ -5,6 +5,11 @@ import X from "../Icons/X";
 
 
 export default function ModalRetirarGanhos() {
+  const data = {
+    usdtPrice: "477.00",
+    brlPrice: "100.00",
+  }
+
   return (
     <div className="flex flex-col fixed w-screen h-screen inset-0 bg-opacity-70  backdrop-filter backdrop-blur-md">
 
@@ -21,12 +26,12 @@ export default function ModalRetirarGanhos() {
             <h1 className="text-black font-Archivo text-sm font-bold tracking-wide leading-normal  letter-spacing-1">Disponível para saque:</h1>
             <div className="flex items-center gap-4 border-y-[1px] border-gray-300 py-8">
               <div className="flex items-center gap-2">
-                <h1 className="text-black font-Archivo text-2xl font-bold tracking-wide leading-normal letter-spacing-1.75">USDT: $ 477.00</h1>
+                <h1 className="text-black font-Archivo text-2xl font-bold tracking-wide leading-normal letter-spacing-1.75">USDT: $ {data.usdtPrice}</h1>
                 <img src="/images/usdt.png" alt="" />
               </div>
 
               <div className="flex items-center gap-2">
-                <h1 className="text-black font-Archivo text-md font-normal tracking-wide leading-normal letter-spacing-1">(BRL: R$ 100.00)</h1>
+                <h1 className="text-black font-Archivo text-md font-normal tracking-wide leading-normal letter-spacing-1">(BRL: R$ {data.brlPrice})</h1>
                 <img src="/images/brl.png" alt="" />
               </div>
             </div>
