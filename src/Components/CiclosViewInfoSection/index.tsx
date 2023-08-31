@@ -1,3 +1,4 @@
+'use client'
 import { ICiclosViewInfoSection } from "@/interfaces/ICiclosViewInfoSection";
 import BtnRoxo from "../BtnRoxo";
 import Bull2 from "../Icons/Bull2";
@@ -7,8 +8,13 @@ import Grafico2 from "../Icons/Grafico2";
 import InterrogacaoIcon from "../Icons/InterrogacaoIcon";
 import Relogio from "../Icons/Relogio";
 import ProgressBar from "../ProgressBar";
+import { useModalStore } from "@/stores";
+
 
 export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoSection }) {
+
+  const { setShowModalComprarCotas } = useModalStore()
+
   return (
     <div className="flex flex-col w-full h-[480px] bg-white rounded-lg p-5  shadow-lg">
       <div className="flex flex-col gap-4 w-full h-full">
@@ -194,7 +200,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
             </div>
           </div>
 
-          <div className="flex w-[40%] h-[50px]">
+          <div onClick={() => setShowModalComprarCotas(true)} className="flex w-[40%] h-[50px]">
             <BtnRoxo>PARTICIPAR DO CICLO</BtnRoxo>
           </div>
         </div>

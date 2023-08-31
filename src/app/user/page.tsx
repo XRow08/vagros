@@ -4,6 +4,7 @@ import Card3Withdraw from "@/Components/Card3Withdraw";
 import BolaQuadrado from "@/Components/Icons/BolaQuadrado";
 import CircleYang from "@/Components/Icons/CircleYang";
 import BtnPerfil from "@/Components/PerfilUsuario/BtnPerfil";
+import { useModalStore } from "@/stores";
 import { useState } from "react";
 
 export default function Usuario() {
@@ -11,6 +12,8 @@ export default function Usuario() {
   const [activeDashboard, setActiveDashboard] = useState(false);
   const [enterCycles, setEnterCycles] = useState(false);
   const [enterDashboard, setEnterDashboard] = useState(false);
+
+  const { setShowModalEditarPerfil } = useModalStore()
 
   const nome = "Alice Alves"
 
@@ -66,13 +69,15 @@ export default function Usuario() {
         <div className="bg-white relative flex flex-col items-center w-full">
           <div className="flex flex-col w-full">
             <div className="flex relative bg-[url('/images/PerfilBanner.jpg')] bg-cover bg-center h-[300px] w-full shadow-2xl">
-              <div className="flex items-center justify-end absolute bottom-0 w-full h-[50px] bg-black bg-opacity-40">
+
+              <div onClick={() => setShowModalEditarPerfil(true)} className="flex items-center justify-end absolute bottom-0 w-full h-[50px] bg-black bg-opacity-40">
                 <div className="bg-white p-1 px-6 rounded-md mr-4 cursor-pointer">
                   <h1 className="text-black font-Archivo text-sm font-semibold tracking-wide leading-normal">
                     EDITAR PERFIL
                   </h1>
                 </div>
               </div>
+
             </div>
 
             <div className="flex flex-col items-center justify-between pt-6 pb-8 gap-2 absolute rounded-xl border-black border-opacity-10 border-[1px] shadow-2xl  bg-white top-[160px] left-20 w-[300px] ">

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import BtnRoxo from "../BtnRoxo";
 import X from "../Icons/X";
+import { useModalStore } from "@/stores";
 
 
 export default function ModalRetirarGanhos() {
@@ -10,15 +11,18 @@ export default function ModalRetirarGanhos() {
     brlPrice: "100.00",
   }
 
+  const { setShowModalRetirarGanhos } = useModalStore()
+
+
   return (
-    <div className="flex flex-col fixed w-screen h-screen inset-0 bg-opacity-70  backdrop-filter backdrop-blur-md">
+   
 
       <div className="flex flex-col items-center w-full h-full ">
-        <div className="flex flex-col items-center inset-1 mt-[200px] w-[550px]  gap-4 px-4 pb-10 rounded-lg border-[2px] border-gray-300 bg-white text-black shadow-xl">
+        <div className="flex flex-col items-center inset-1  w-[550px]  gap-4 px-4 pb-10 rounded-lg border-[2px] border-gray-300 bg-white text-black shadow-xl">
 
           <div className="flex w-full items-center justify-between pt-4">
             <h1 className="text-black font-Archivo text-lg font-bold tracking-wider leading-normal">Retirar os meus ganhos</h1>
-            <X />
+            <X onClick={() => setShowModalRetirarGanhos(false)}/>
           </div>
 
           
@@ -46,6 +50,6 @@ export default function ModalRetirarGanhos() {
         </div>
       </div>
 
-    </div>
+    
   )
 }

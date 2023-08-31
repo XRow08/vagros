@@ -1,8 +1,13 @@
+'use client'
 import { IWidrawal } from "@/interfaces/IWithdrawal";
 import BtnRoxo from "../BtnRoxo";
 import Wallet from "../Icons/Wallet";
+import { useModalStore } from "@/stores";
 
 export default function WithdrawalPanel({ item }: { item: IWidrawal }){
+  
+  const { setShowModalRetirarGanhos } = useModalStore()
+
   return(
     <div className="flex flex-col w-full  bg-white rounded-lg p-5 shadow-2xl">
       <div className="flex flex-col gap-4 w-full h-full">
@@ -33,7 +38,7 @@ export default function WithdrawalPanel({ item }: { item: IWidrawal }){
           </div>
 
 
-          <div className="w-[30%] h-[50px] my-2">
+          <div onClick={() => setShowModalRetirarGanhos(true)} className="w-[30%] h-[50px] my-2">
             <BtnRoxo>RETIRAR FUNDOS</BtnRoxo>
           </div>
         </div>
