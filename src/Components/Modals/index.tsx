@@ -3,16 +3,17 @@ import { Modal } from "./Modal";
 import { useModalStore } from "@/stores/modalStore";
 
 const Modals = () => {
-  const { setShowModalWallet, showModalWallet } = useModalStore()
+  const { setShowModalWallet, showModalWallet } = useModalStore();
 
   return (
     <>
-      <Modal title={`Mint`}
+      <Modal
+        title={`showModalWallet`}
         show={showModalWallet}
         onClose={() => setShowModalWallet(false)}
       >
         <ModalConectarCarteira />
-      </Modal >
+      </Modal>
     </>
   );
 };
