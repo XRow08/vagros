@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BtnRoxo from "../BtnRoxo";
 import Xwhite from "../Icons/Xwhite";
 
@@ -45,8 +46,8 @@ export default function FormInfoPessoal() {
           />
         </div>
 
-        <div className="w-[65%]">
-          <BtnRoxo>CONTINUAR</BtnRoxo>
+        <div className="w-[65%] h-[50px]"> 
+            <BtnRoxo>CONTINUAR</BtnRoxo>
         </div>
         
       </div>

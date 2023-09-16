@@ -1,24 +1,26 @@
-import Link from "next/link";
 import ConnectWalletButton from "./ConnectWalletButton";
 import MenuItens from "./MenuItens";
+import { MenuIcon } from "../Icons/MenuIcon";
 
-
-export function Header(){
-    return(
-        <div className="fixed z-40 top-0 w-full h-[87px] backdrop-blur-md rounded-bl-[45px] rounded-br-[45px] flex items-center justify-between bg-[#050505] bg-opacity-40 pr-10 pl-10">
-            <Link href="/">
-                <div className="">
-                    <img className="absolute top-0 left-0 mt-0 ml-20" src="/images/Logo.svg" alt="Vagros Logo" />
-                </div>
-            </Link>
-            <div className="flex-grow flex justify-center">
-                <MenuItens></MenuItens>
-            </div>
-            <div className="absolute right-20">
-                <Link href="">
-                    <ConnectWalletButton />
-                </Link>
-            </div>
-        </div>
-    )
+export function Header() {
+  return (
+    <div className="fixed z-50 top-0 w-full min-h-[87px] backdrop-blur-md rounded-bl-[45px] rounded-br-[45px] flex items-center justify-between lg:bg-[#050505] lg:bg-opacity-40 pr-10 pl-10">
+      <a href="/">
+        <img
+          className="absolute top-0 left-10 lg:left-20"
+          src="/images/Logo.svg"
+          alt="Vagros Logo"
+        />
+      </a>
+      <div className="flex-grow hidden lg:flex justify-center">
+        <MenuItens />
+      </div>
+      <div className="hidden lg:block absolute right-20">
+        <ConnectWalletButton />
+      </div>
+      <div className="lg:hidden">
+        <MenuIcon />
+      </div>
+    </div>
+  );
 }

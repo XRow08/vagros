@@ -2,18 +2,19 @@ import YellowWord from "@/Components/YellowWord";
 
 export default function AboutUs() {
   return (
-    <div className="flex flex-col items-center w-full h-full py-4 bg-[#1E1E1E]">
-      <div className="flex items-center w-full justify-center h-full gap-10 mt-[120px]">
-        
-        <div className="flex flex-col gap-3 w-[60%] ">
+    <div className="flex flex-col items-center w-full min-h-screen py-4 bg-[#1E1E1E]">
+      <div className="flex flex-col lg:flex-row px-4 justify-center h-full gap-10 mt-[120px] lg:px-[5%] mb-10">
+        <div className="flex flex-col gap-3 lg:w-[60%] ">
           <div className="flex flex-col gap-1">
-            <h1 className="text-white font-Archivo text-25 font-normal tracking-wider leading-normal letter-spacing-1.25">Quem somos?</h1>
-            <h1 className="text-gray-300 font-Archivo text-3xl font-bold tracking-wider leading-normal letter-spacing-2.25">
+            <h1 className="text-white text-[25px] font-normal tracking-wider leading-normal">
+              Quem somos?
+            </h1>
+            <h1 className="text-gray-300 text-[45px] font-bold tracking-wider leading-normal">
               Conheça a história da <YellowWord>VAGROS</YellowWord>
             </h1>
           </div>
 
-          <div className="flex flex-col gap-2 text-white font-Archivo text-sm font-normal tracking-wide leading-normal letter-spacing-1">
+          <div className="flex flex-col gap-2 text-white text-xl font-normal tracking-wide leading-normal">
             <p>
               Em 2009, reunimos um grupo de amigos movidos pelo desejo de
               aproveitar o crescimento do setor agropecuário e contribuir para a
@@ -60,13 +61,15 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <div className="flex w-[400px] h-[400px]">
-          <img src="/images/ImgAboutUs.png" className="w-full h-full" alt="" />
+        <div className="flex w-full lg:w-[40%] h-full">
+          <img
+            src="/images/ImgAboutUs.png"
+            draggable={false}
+            className="w-full h-full object-cover"
+            alt=""
+          />
         </div>
-
-
       </div>
-
     </div>
   );
 }

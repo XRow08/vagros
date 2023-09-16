@@ -4,7 +4,7 @@ export default function BtnRoxo({
     children: React.ReactNode
   }){
     return(
-        <div className=" bg-gradient-to-r text-white from-purple-500 to-purple-800 shadow-lg backdrop-blur-xl w-full h-full flex items-center justify-center rounded-[8px]">
+        <div className=" bg-gradient-to-r text-white from-purple-500 to-purple-800 cursor-pointer shadow-lg backdrop-blur-xl w-full h-full flex items-center justify-center rounded-[8px]">
             <div>{children}</div>
         </div>
     )

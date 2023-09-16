@@ -3,13 +3,21 @@ import { create } from "zustand";
 interface useModalStore {
   showModalWallet: boolean;
   setShowModalWallet: (showAuthModal: boolean) => void;
-  showModalCotas: boolean;
-  setShowModalCotas: (showModalCotas: boolean) => void;
+  showModalEditarPerfil: boolean;
+  setShowModalEditarPerfil: (showModalEditarPerfil: boolean) => void;
+  showModalComprarCotas: boolean;
+  setShowModalComprarCotas: (showModalComprarCotas: boolean) => void;
+  showModalRetirarGanhos: boolean;
+  setShowModalRetirarGanhos: (showModalRetirarGanhos: boolean) => void;
 }
 
 export const useModalStore = create<useModalStore>((set) => ({
   showModalWallet: false,
   setShowModalWallet: (showModalWallet) => set({ showModalWallet }),
-  showModalCotas: false,
-  setShowModalCotas: (showModalCotas) => set({ showModalCotas }),
+  showModalEditarPerfil: false,
+  setShowModalEditarPerfil: (showModalEditarPerfil) => set({ showModalEditarPerfil }),
+  showModalComprarCotas: false,
+  setShowModalComprarCotas: (showModalComprarCotas) => set({ showModalComprarCotas }),
+  showModalRetirarGanhos: false,
+  setShowModalRetirarGanhos: (showModalRetirarGanhos) => set({ showModalRetirarGanhos }),
 }));
