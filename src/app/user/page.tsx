@@ -1,6 +1,7 @@
 "use client";
 import Card3 from "@/Components/Card3";
 import Card3Withdraw from "@/Components/Card3Withdraw";
+import { Chart } from "@/Components/Chart";
 import BolaQuadrado from "@/Components/Icons/BolaQuadrado";
 import CircleYang from "@/Components/Icons/CircleYang";
 import BtnPerfil from "@/Components/PerfilUsuario/BtnPerfil";
@@ -13,16 +14,16 @@ export default function Usuario() {
   const [enterCycles, setEnterCycles] = useState(false);
   const [enterDashboard, setEnterDashboard] = useState(false);
 
-  const { setShowModalEditarPerfil } = useModalStore()
+  const { setShowModalEditarPerfil } = useModalStore();
 
-  const nome = "Alice Alves"
+  const nome = "Alice Alves";
 
   const rendimentos = {
     fornecimento: "125.000,00",
     ganhos: "50.000,00",
     stake: "100.000,00",
-    totalRetirada: "25.000,00"
-  }
+    totalRetirada: "25.000,00",
+  };
 
   const data = [
     {
@@ -64,20 +65,21 @@ export default function Usuario() {
   ];
 
   return (
-    <div className="flex items-center flex-col bg-white w-full h-full">
+    <div className="flex items-center flex-col bg-white w-full min-h-screen">
       <div className="flex flex-col items-center w-full">
         <div className="bg-white relative flex flex-col items-center w-full">
           <div className="flex flex-col w-full">
             <div className="flex relative bg-[url('/images/PerfilBanner.jpg')] bg-cover bg-center h-[300px] w-full shadow-2xl">
-
-              <div onClick={() => setShowModalEditarPerfil(true)} className="flex items-center justify-end absolute bottom-0 w-full h-[50px] bg-black bg-opacity-40">
+              <div
+                onClick={() => setShowModalEditarPerfil(true)}
+                className="flex items-center justify-end absolute bottom-0 w-full h-[50px] bg-black bg-opacity-40"
+              >
                 <div className="bg-white p-1 px-6 rounded-md mr-4 cursor-pointer">
                   <h1 className="text-black font-Archivo text-sm font-semibold tracking-wide leading-normal">
                     EDITAR PERFIL
                   </h1>
                 </div>
               </div>
-
             </div>
 
             <div className="flex flex-col items-center justify-between pt-6 pb-8 gap-2 absolute rounded-xl border-black border-opacity-10 border-[1px] shadow-2xl  bg-white top-[160px] left-20 w-[300px] ">
@@ -91,7 +93,8 @@ export default function Usuario() {
 
               <div className="flex flex-col mt-[5px] w-[90%] gap-4">
                 <div
-                onMouseEnter={() => setEnterCycles(true)} onMouseLeave={() => setEnterCycles(false)}
+                  onMouseEnter={() => setEnterCycles(true)}
+                  onMouseLeave={() => setEnterCycles(false)}
                   onClick={() => {
                     if (setActiveDashboard) {
                       setActiveDashboard(false);
@@ -101,22 +104,27 @@ export default function Usuario() {
                   }}
                   className="flex h-[40px] cursor-pointer"
                 >
-                  
-                    <BtnPerfil state={activeCycles}>
-                      <div className="flex gap-2">
-                        <CircleYang
-                          color={activeCycles ? "white" : enterCycles ? "white" : "black"}
-                        ></CircleYang>
-                        <h1 className=" font-Archivo text-md font-bold leading-normal">
-                          MEUS CICLOS
-                        </h1>
-                      </div>
-                    </BtnPerfil>
-                  
+                  <BtnPerfil state={activeCycles}>
+                    <div className="flex gap-2">
+                      <CircleYang
+                        color={
+                          activeCycles
+                            ? "white"
+                            : enterCycles
+                            ? "white"
+                            : "black"
+                        }
+                      />
+                      <h1 className=" font-Archivo text-md font-bold leading-normal">
+                        MEUS CICLOS
+                      </h1>
+                    </div>
+                  </BtnPerfil>
                 </div>
 
                 <div
-                onMouseEnter={() => setEnterDashboard(true)} onMouseLeave={() => setEnterDashboard(false)}
+                  onMouseEnter={() => setEnterDashboard(true)}
+                  onMouseLeave={() => setEnterDashboard(false)}
                   onClick={() => {
                     if (activeCycles) {
                       setActiveCycles(false);
@@ -126,16 +134,21 @@ export default function Usuario() {
                   className="flex h-[40px] cursor-pointer "
                 >
                   <BtnPerfil state={activeDashboard}>
-                    <div className="flex w-full h-full  gap-2">
+                    <div className="flex w-full h-full gap-2">
                       <BolaQuadrado
-                        color={activeDashboard ? "white" : enterDashboard ? "white" : "black"}
-                      ></BolaQuadrado>
+                        color={
+                          activeDashboard
+                            ? "white"
+                            : enterDashboard
+                            ? "white"
+                            : "black"
+                        }
+                      />
                       <h1 className="font-Archivo text-md font-bold leading-normal">
                         DASHBOARD
                       </h1>
                     </div>
                   </BtnPerfil>
-
                 </div>
               </div>
             </div>
@@ -144,34 +157,26 @@ export default function Usuario() {
 
         <div className="flex items-center w-full">
           <div className="flex flex-col gap-28 w-full ml-[400px] mr-4 my-8 shadow-2xl px-20 rounded-md border-[1px] border-black border-opacity-10 ">
-            <div className="flex items-center justify-center hover:rounded-b-sm border-b-[3px] border-white hover:border-b-[3px] hover:border-[#B338FF] p-4 cursor-pointer w-[200px]  h-[50px]">
+            <div className="flex items-center justify-center hover:rounded-b-sm border-b-[3px] border-[#B338FF] p-4 cursor-pointer w-[200px] h-[50px]">
               <h1 className="text-black font-Archivo text-20 font-semibold leading-normal">
-                {activeCycles
-                  ? "Meus ciclos"
-                  : activeDashboard
-                  ? "Meus rendimentos"
-                  : ""}
+                {activeCycles ? "Meus ciclos" : "Meus rendimentos"}
               </h1>
             </div>
           </div>
         </div>
         {activeCycles ? (
-          <div className="flex flex-col ml-[400px] items-center gap-14 bg-white pb-[30px]">
-            <div className="flex items-center gap-5">
-              <Card3Withdraw />
-              <Card3Withdraw />
-              <Card3Withdraw />
-            </div>
-            <div className="flex items-center gap-5">
-              {data.map((item, index) => {
-                return <Card3 key={index} item={item} />;
-              })}
-            </div>
+          <div className="grid grid-cols-3 gap-5 w-3/4 pl-[400px] pr-4 items-center pb-[30px]">
+            <Card3Withdraw />
+            <Card3Withdraw />
+            <Card3Withdraw />
+            {data.map((item, index) => {
+              return <Card3 key={index} item={item} />;
+            })}
           </div>
-        ) : activeDashboard ? (
+        ) : (
           <div className="flex flex-col items-center w-full">
             <div className="w-full">
-              <div className="flex items-center justify-between px-4 2xl:px-8 h-[100px] ml-[400px]  mr-4 gap-4 2xl:gap-14 mb-8 shadow-2xl rounded-md border-[1px] border-black border-opacity-10">
+              <div className="flex items-center justify-between px-4 2xl:px-16 h-[100px] ml-[400px] mr-4 gap-4 2xl:gap-14 mb-8 shadow-2xl rounded-md border-[1px] border-black border-opacity-10">
                 <div className="flex items-center pl-6 pr-6 bg-gradient-to-r from-[#FF6B00] to-[#FF9C27] rounded-lg border-white border-[2px] shadow-lg h-[80%] w-[25%]">
                   <div className="flex flex-col">
                     <h1 className="text-white font-Archivo text-sm font-normal leading-normal tracking-wide letter-spacing-0.8">
@@ -213,10 +218,11 @@ export default function Usuario() {
                   </div>
                 </div>
               </div>
-            </div>   
+            </div>
+            <div className="pl-[400px] w-full pr-4 mb-[10rem]">
+              <Chart />
+            </div>
           </div>
-        ) : (
-          ""
         )}
       </div>
     </div>
