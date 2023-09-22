@@ -50,7 +50,7 @@ export default function ModalComprarCotas() {
         </div>
       </div>
       <div className="h-14 w-1/2">
-        <BtnRoxo children={"SUPPLY USDT"} />
+        <BtnRoxo>SUPPLY USDT</BtnRoxo>
       </div>
     </div>
   );
