@@ -4,6 +4,7 @@ import BtnRoxo from "../BtnRoxo";
 import Card2 from "../Card2";
 import PurpleWord from "../PurpleWord";
 import YellowWord from "../YellowWord";
+import BtnAmarelo from "../BtnAmarelo";
 
 export default function HomeSecondSection() {
   const data = [
@@ -112,22 +113,22 @@ export default function HomeSecondSection() {
           })}
         </div>
 
-        <Card2 item={data[6]} />
+        <div className="w-1/3">
+          <Card2 item={data[6]} />
+        </div>
       </div>
 
-      <div className="flex flex-col relative w-full items-start m-10 px-[10%] mt-20 gap-5 h-[600px]">
+      <div className="flex flex-col relative w-full items-start m-10 px-[10%] mt-20 gap-2 h-[600px]">
         <div className="flex lg:w-[40%]">
           <Title>
             APOIE O ECOSSISTEMA <YellowWord>LEILOANDO</YellowWord> SEU REBANHO
           </Title>
         </div>
 
-        <a href="/partners">
-          <div className="flex bg-gradient-to-r  w-full from-yellow-300 to-orange-500  filter drop-shadow-lg backdrop-blur-xl rounded-lg p-3 pl-10 pr-10 cursor-pointer">
-            <h1 className="text-black font-archivo text-base font-bold">
-              REALIZAR LEILÃO
-            </h1>
-          </div>
+        <a href="/partners" className="h-14 w-[20rem] mt-2">
+          <button className="bg-gradient-to-r text-black from-yellow-300 to-orange-500 cursor-pointer hover:scale-[1.01] font-bold text-lg hover:opacity-80 transition-all duration-300 ease-in-out shadow-lg backdrop-blur-xl w-full h-full flex items-center justify-center rounded-md">
+            REALIZAR LEILÃO
+          </button>
         </a>
 
         <img

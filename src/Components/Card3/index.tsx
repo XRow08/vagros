@@ -6,9 +6,9 @@ import { BrasilIcon } from "../Icons/BrasilIcon";
 
 export default function Card3({ item }: { item: ICard3 }) {
   return (
-    <div className="flex flex-col  bg-white w-full min-w-[280px] h-full rounded-lg  shadow-2xl ">
-      <div className="flex flex-col  text-black w-full h-full shadow-2xl">
-        <div className="w-full relative">
+    <div className="flex flex-col bg-white w-full rounded-lg h-full shadow-2xl">
+      <div className="flex flex-col text-black w-full shadow-2xl">
+        <div className="w-full relative h-[218px]">
           <img
             src="/images/Vicon.svg"
             className="absolute right-2 p-1 pt-2"
@@ -17,12 +17,12 @@ export default function Card3({ item }: { item: ICard3 }) {
 
           <img
             src="/images/vaquinha2.png"
-            className="max-h-[130px] w-full cover rounded-t-lg"
+            className="h-full w-full cover rounded-t-lg"
             alt=""
           />
         </div>
 
-        <div className="flex items-center justify-between py-1 mr-[5%] ml-[5%]">
+        <div className="flex items-center justify-between py-1 mx-[5%] pt-2">
           <h1 className="text-black font-bold text-lg leading-normal tracking-wide">
             {item.nftName}
           </h1>
@@ -31,7 +31,7 @@ export default function Card3({ item }: { item: ICard3 }) {
           </div>
         </div>
 
-        <div className="flex items-center justify-between mr-[5%] ml-[5%]">
+        <div className="flex items-center justify-between mx-[5%]">
           <div className="flex items-center justify-between shadow-xl border-[1px] border-gray-100 rounded-md my-2 p-1 w-[40%]">
             <h1 className="text-black text-14 font-normal leading-normal tracking-wider flex items-center">
               USDT
@@ -53,7 +53,7 @@ export default function Card3({ item }: { item: ICard3 }) {
           </div>
         </div>
 
-        <div className="flex gap-2 items-center mr-[7%] ml-[7%] mb-[5px]">
+        <div className="flex gap-2 items-center mx-[7%] mb-[5px] pb-2">
           <Wallet />
           <h1 className="text-black text-base font-normal leading-normal tracking-wider">
             {item.address}

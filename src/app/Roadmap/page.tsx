@@ -19,8 +19,8 @@ export default function Roadmap() {
               alt=""
             />
 
-            <div className="flex w-full gap-[200px]">
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] bg-[#212121] rounded-md px-4 py-2">
+            <div className="flex w-full gap-[200px] ">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] transition-all duration-300 ease-in-out hover:-translate-y-2 bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <YellowWord>2023</YellowWord>
                 </h1>
@@ -47,7 +47,7 @@ export default function Roadmap() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] transition-all duration-300 ease-in-out hover:-translate-y-2 mt-[100px] bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <YellowWord>2023</YellowWord>
                 </h1>
@@ -73,8 +73,8 @@ export default function Roadmap() {
               </div>
             </div>
 
-            <div className="flex w-full gap-[200px]">
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] bg-[#212121] rounded-md px-4 py-2">
+            <div className="flex w-full gap-[200px] ">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] transition-all duration-300 ease-in-out hover:-translate-y-2 bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <YellowWord>2023</YellowWord>
                 </h1>
@@ -98,7 +98,7 @@ export default function Roadmap() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] transition-all duration-300 ease-in-out hover:-translate-y-2 mt-[100px] bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <YellowWord>2024</YellowWord>
                 </h1>
@@ -124,8 +124,8 @@ export default function Roadmap() {
               </div>
             </div>
 
-            <div className="flex w-full gap-[200px]">
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] bg-[#212121] rounded-md px-4 py-2">
+            <div className="flex w-full gap-[200px] ">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] transition-all duration-300 ease-in-out hover:-translate-y-2 bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <YellowWord>2024</YellowWord>
                 </h1>
@@ -149,7 +149,7 @@ export default function Roadmap() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#FFD809] transition-all duration-300 ease-in-out hover:-translate-y-2 mt-[100px] bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <YellowWord>2024</YellowWord>
                 </h1>
@@ -180,8 +180,8 @@ export default function Roadmap() {
               alt=""
             />
 
-            <div className="flex w-full gap-[200px]">
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] bg-[#212121] rounded-md px-4 py-2">
+            <div className="flex w-full gap-[200px] ">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] transition-all duration-300 ease-in-out hover:-translate-y-2 bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <PurpleWord>2024</PurpleWord>
                 </h1>
@@ -205,7 +205,7 @@ export default function Roadmap() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] transition-all duration-300 ease-in-out hover:-translate-y-2 mt-[100px] bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <PurpleWord>2025</PurpleWord>
                 </h1>
@@ -227,8 +227,8 @@ export default function Roadmap() {
                 </div>
               </div>
             </div>
-            <div className="flex w-full gap-[200px]">
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] bg-[#212121] rounded-md px-4 py-2">
+            <div className="flex w-full gap-[200px] ">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] transition-all duration-300 ease-in-out hover:-translate-y-2 bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <PurpleWord>2025</PurpleWord>
                 </h1>
@@ -249,7 +249,7 @@ export default function Roadmap() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] mt-[100px] bg-[#212121] rounded-md px-4 py-2">
+              <div className="flex flex-col items-center border-[1px] w-[500px] h-[230px] border-[#7000FF] transition-all duration-300 ease-in-out hover:-translate-y-2 mt-[100px] bg-[#212121] rounded-md px-4 py-2">
                 <h1>
                   <PurpleWord>2026</PurpleWord>
                 </h1>

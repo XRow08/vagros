@@ -24,7 +24,7 @@ export default function CiclosViewPerfil({
             alt="vaquinha2"
           />
         </div>
-        <div className="flex flex-col lg:mx-[calc(10%+250px)] lg:pl-[25%] w-full lg:h-[100px] lg:px-[10%] px-4">
+        <div className="flex flex-col lg:mx-[calc(10%+250px)] lg:pl-[35%] xl:pl-[25%] w-full lg:h-[100px] lg:px-[10%] px-4">
           <h1 className="text-black text-2xl font-bold leading-normal tracking-wider mt-[10px]">
             {item.title}
           </h1>

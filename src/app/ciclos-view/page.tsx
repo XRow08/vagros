@@ -72,7 +72,7 @@ export default function CiclosView() {
         </a>
         <div className="border-b-[1px] border-[#252525] lg:hidden block border-opacity-25 w-full my-4" />
         <SearchBar />
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-5 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-5 w-full">
           {data.map((item, index) => {
             return <Card3 key={index} item={item} />;
           })}

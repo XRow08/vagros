@@ -10,7 +10,7 @@ import Arrow from "../Icons/Arrow";
 
 export default function Card2({ item }: { item: ICard2 }) {
   return (
-    <div className="flex flex-col gap-3 bg-[#212121] shadow-lg min-w-[380px] h-[240px] rounded-lg p-6">
+    <div className="flex flex-col gap-3 bg-[#212121] shadow-lg h-full rounded-lg p-6 transition-all duration-300 ease-in-out hover:-translate-y-2">
       <div className="flex items-center justify-between">
         <h1 className="text-white font-archivo text-base font-light leading-normal tracking-wider">
           {item.title1}

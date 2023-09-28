@@ -11,78 +11,712 @@ import type {
 
 const _abi = [
   {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "cycleId",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "address",
+        name: "buyer",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "address",
+        name: "paymentToken",
+        type: "address",
+      },
+    ],
+    name: "CycleAmountBought",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "cycleId",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "totalSupply",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "unitPrice",
+        type: "uint256",
+      },
+      {
+        indexed: false,
+        internalType: "address",
+        name: "paymentToken",
+        type: "address",
+      },
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "expiration",
+        type: "uint256",
+      },
+    ],
+    name: "CycleCreated",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint256",
+        name: "id",
+        type: "uint256",
+      },
+    ],
+    name: "CycleSoldOut",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "uint8",
+        name: "version",
+        type: "uint8",
+      },
+    ],
+    name: "Initialized",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+    ],
+    name: "Paused",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "bytes32",
+        name: "role",
+        type: "bytes32",
+      },
+      {
+        indexed: true,
+        internalType: "bytes32",
+        name: "previousAdminRole",
+        type: "bytes32",
+      },
+      {
+        indexed: true,
+        internalType: "bytes32",
+        name: "newAdminRole",
+        type: "bytes32",
+      },
+    ],
+    name: "RoleAdminChanged",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "bytes32",
+        name: "role",
+        type: "bytes32",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "sender",
+        type: "address",
+      },
+    ],
+    name: "RoleGranted",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: "bytes32",
+        name: "role",
+        type: "bytes32",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+      {
+        indexed: true,
+        internalType: "address",
+        name: "sender",
+        type: "address",
+      },
+    ],
+    name: "RoleRevoked",
+    type: "event",
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: false,
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+    ],
+    name: "Unpaused",
+    type: "event",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "Cycles",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "cycleId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "totalSupply",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "unitPrice",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "paymentToken",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "expiration",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "DEFAULT_ADMIN_ROLE",
+    outputs: [
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_cycleId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_amount",
+        type: "uint256",
+      },
+    ],
+    name: "buyCycle",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_totalSupply",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_unitPrice",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "_paymentToken",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "_expiration",
+        type: "uint256",
+      },
+    ],
+    name: "createCycle",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_cycleId",
+        type: "uint256",
+      },
+    ],
+    name: "getCycle",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "cycleId",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "totalSupply",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "unitPrice",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "paymentToken",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "expiration",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct VagrosMarketplace.Cycle",
+        name: "",
+        type: "tuple",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getCycles",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "cycleId",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "totalSupply",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "unitPrice",
+            type: "uint256",
+          },
+          {
+            internalType: "address",
+            name: "paymentToken",
+            type: "address",
+          },
+          {
+            internalType: "uint256",
+            name: "expiration",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct VagrosMarketplace.Cycle[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "role",
+        type: "bytes32",
+      },
+    ],
+    name: "getRoleAdmin",
+    outputs: [
+      {
+        internalType: "bytes32",
+        name: "",
+        type: "bytes32",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "role",
+        type: "bytes32",
+      },
+      {
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+    ],
+    name: "grantRole",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "role",
+        type: "bytes32",
+      },
+      {
+        internalType: "address",
+        name: "account",
+        type: "address",
+      },
+    ],
+    name: "hasRole",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "address",
-        name: "_logic",
+        name: "_operator",
+        type: "address",
+      },
+    ],
+    name: "initialize",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "isCycleSold",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "isSupportedPaymentToken",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "operator",
         type: "address",
       },
       {
         internalType: "address",
-        name: "admin_",
+        name: "from",
         type: "address",
+      },
+      {
+        internalType: "uint256[]",
+        name: "ids",
+        type: "uint256[]",
+      },
+      {
+        internalType: "uint256[]",
+        name: "values",
+        type: "uint256[]",
       },
       {
         internalType: "bytes",
-        name: "_data",
+        name: "data",
         type: "bytes",
       },
     ],
-    stateMutability: "payable",
-    type: "constructor",
+    name: "onERC1155BatchReceived",
+    outputs: [
+      {
+        internalType: "bytes4",
+        name: "",
+        type: "bytes4",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
-    anonymous: false,
     inputs: [
       {
-        indexed: false,
         internalType: "address",
-        name: "previousAdmin",
+        name: "operator",
         type: "address",
       },
       {
-        indexed: false,
         internalType: "address",
-        name: "newAdmin",
+        name: "from",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "id",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
+      },
+      {
+        internalType: "bytes",
+        name: "data",
+        type: "bytes",
+      },
+    ],
+    name: "onERC1155Received",
+    outputs: [
+      {
+        internalType: "bytes4",
+        name: "",
+        type: "bytes4",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "pause",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "paused",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "role",
+        type: "bytes32",
+      },
+      {
+        internalType: "address",
+        name: "account",
         type: "address",
       },
     ],
-    name: "AdminChanged",
-    type: "event",
+    name: "renounceRole",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
-    anonymous: false,
     inputs: [
       {
-        indexed: true,
+        internalType: "uint256",
+        name: "_cycleId",
+        type: "uint256",
+      },
+    ],
+    name: "requestReimbursement",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "role",
+        type: "bytes32",
+      },
+      {
         internalType: "address",
-        name: "beacon",
+        name: "account",
         type: "address",
       },
     ],
-    name: "BeaconUpgraded",
-    type: "event",
+    name: "revokeRole",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
-    anonymous: false,
     inputs: [
       {
-        indexed: true,
         internalType: "address",
-        name: "implementation",
+        name: "_token",
+        type: "address",
+      },
+      {
+        internalType: "bool",
+        name: "_isSupported",
+        type: "bool",
+      },
+    ],
+    name: "setSupportedPaymentToken",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_allowlist",
         type: "address",
       },
     ],
-    name: "Upgraded",
-    type: "event",
+    name: "setVagrosAllowlist",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
-    stateMutability: "payable",
-    type: "fallback",
+    inputs: [
+      {
+        internalType: "address",
+        name: "_cycleToken",
+        type: "address",
+      },
+    ],
+    name: "setVagrosCycleToken",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
-    stateMutability: "payable",
-    type: "receive",
+    inputs: [
+      {
+        internalType: "bytes4",
+        name: "interfaceId",
+        type: "bytes4",
+      },
+    ],
+    name: "supportsInterface",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "unpause",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
   },
 ] as const;
 

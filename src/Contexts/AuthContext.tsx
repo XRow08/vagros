@@ -33,8 +33,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           clientId,
           chainConfig: {
             chainNamespace: CHAIN_NAMESPACES.EIP155,
-            chainId: "0x1",
-            rpcTarget: "https://rpc.ankr.com/eth",
+            chainId: "0x13881",
+            rpcTarget: "https://endpoints.omniatech.io/v1/matic/mumbai/public",
           },
           uiConfig: {
             appName: "Vagros",
@@ -46,7 +46,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             loginGridCol: 3,
             primaryButton: "socialLogin",
           },
-          web3AuthNetwork: "cyan",
+          web3AuthNetwork: "testnet",
         });
         const torusPlugin = new TorusWalletConnectorPlugin({
           torusWalletOpts: {},
@@ -62,16 +62,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         });
         setTorusPlugin(torusPlugin);
         await web3auth.addPlugin(torusPlugin);
-        const defaultWcSettings = await getWalletConnectV2Settings(
-          "eip155",
-          [1],
-          "04309ed1007e77d1f119b85205bb779d"
-        );
-        const walletConnectV2Adapter = new WalletConnectV2Adapter({
-          adapterSettings: { ...defaultWcSettings.adapterSettings },
-          loginSettings: { ...defaultWcSettings.loginSettings },
-        });
-        web3auth.configureAdapter(walletConnectV2Adapter);
         const torusWalletAdapter = new TorusWalletAdapter({
           clientId,
         });
