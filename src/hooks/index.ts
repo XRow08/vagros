@@ -1,1 +1,1 @@
-export * from "./useContractAllowlist";
+export * from "./useContractMarketplace";
