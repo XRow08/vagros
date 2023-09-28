@@ -16,7 +16,7 @@ export async function calculateGasLimit(
 }
 
 export const getEthersSigner = ()  => {
-  if (typeof window !== 'undefined' && window.ethereum) {
+  if (typeof window !== 'undefined') {
     // @ts-ignore
     return new ethers.providers.Web3Provider(window?.ethereum).getSigner();
   }
