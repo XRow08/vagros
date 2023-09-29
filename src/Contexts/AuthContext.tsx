@@ -3,15 +3,11 @@ import { CHAIN_NAMESPACES, IProvider } from "@web3auth/base";
 import { Web3Auth } from "@web3auth/modal";
 import { TorusWalletAdapter } from "@web3auth/torus-evm-adapter";
 import { TorusWalletConnectorPlugin } from "@web3auth/torus-wallet-connector-plugin";
-import {
-  WalletConnectV2Adapter,
-  getWalletConnectV2Settings,
-} from "@web3auth/wallet-connect-v2-adapter";
 import { createContext, useContext, useEffect, useState } from "react";
 import RPC from "./web3RPC";
 import { StorageHelper } from "@/helpers";
 const clientId =
-  "BEglQSgt4cUWcj6SKRdu5QkOXTsePmMcusG5EAoyjyOYKlVRjIF1iCNnMOTfpzCiunHRrMui8TIwQPXdkQ8Yxuk";
+  "BMmz5k221pU8zkxdtVaalNy01l8HwyZsuQAQuRjZf6vNJQFwT3_M6bowmuVmaX33SXOlh_MfYxEz_rPSWnk34jg";
 
 const AuthContext = createContext<any>(undefined!);
 
