@@ -1,5 +1,4 @@
-export * from './ICard1'
-export * from './ICard2'
-export * from './ICard3'
-export * from './ICiclosViewInfoSection'
-
+export * from "./INFT";
+export * from "./ICard2";
+export * from "./ICiclo";
+export * from "./ICiclosViewInfoSection";

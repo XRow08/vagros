@@ -1,14 +1,13 @@
-import Link from "next/link";
 import Diamond from "../Icons/Diamond";
 import Grafico1 from "../Icons/Grafico1";
 import Grafico2 from "../Icons/Grafico2";
 import Relogio from "../Icons/Relogio";
 import Circle from "../Icons/Circle";
 import InterrogacaoIcon from "../Icons/InterrogacaoIcon";
-import { ICard1 } from "@/interfaces/ICard1";
+import type { ICiclo } from "@/interfaces/ICiclo";
 import BtnAmarelo from "../BtnAmarelo";
 
-export default function Card1({ item }: { item: ICard1 }) {
+export default function CicleCard({ item }: { item: ICiclo }) {
   return (
     <div className="flex flex-col justify-between rounded-xl shadow-2xl w-full bg-white text-black transition-all duration-300 ease-in-out hover:-translate-y-2">
       <div className="relative">
@@ -108,7 +107,10 @@ export default function Card1({ item }: { item: ICard1 }) {
             </div>
           </div>
         </div>
-        <a href="/ciclos-view" className="h-14 overflow-hidden rounded-b-xl">
+        <a
+          href={`/ciclos/${item.id}`}
+          className="h-14 overflow-hidden rounded-b-xl"
+        >
           <BtnAmarelo>DESCOBRIR MAIS</BtnAmarelo>
         </a>
       </div>

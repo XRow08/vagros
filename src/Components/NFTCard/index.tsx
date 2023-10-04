@@ -1,24 +1,27 @@
-import { ICard3 } from "@/interfaces/ICard3";
+import type { INFT } from "@/interfaces/INFT";
 import Polygon from "../Icons/Polygon";
 import Wallet from "../Icons/Wallet";
 import { TLogoIcon } from "../Icons/TLogoIcon";
 import { BrasilIcon } from "../Icons/BrasilIcon";
 
-export default function Card3({ item }: { item: ICard3 }) {
+export default function NFTCard({ item }: { item: INFT }) {
   return (
-    <div className="flex flex-col bg-white w-full rounded-lg h-full shadow-2xl">
-      <div className="flex flex-col text-black w-full shadow-2xl">
+    <a
+      href={`/nft/${item.id}`}
+      className="flex flex-col bg-white w-full rounded-lg overflow-hidden h-full shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 cursor-pointer"
+    >
+      <div className="flex flex-col text-black w-full shadow-2x">
         <div className="w-full relative h-[218px]">
           <img
             src="/images/Vicon.svg"
             className="absolute right-2 p-1 pt-2"
-            alt=""
+            alt="Vicon"
           />
 
           <img
             src="/images/vaquinha2.png"
             className="h-full w-full cover rounded-t-lg"
-            alt=""
+            alt="vaquinha2"
           />
         </div>
 
@@ -31,9 +34,9 @@ export default function Card3({ item }: { item: ICard3 }) {
           </div>
         </div>
 
-        <div className="flex items-center justify-between mx-[5%]">
-          <div className="flex items-center justify-between shadow-xl border-[1px] border-gray-100 rounded-md my-2 p-1 w-[40%]">
-            <h1 className="text-black text-14 font-normal leading-normal tracking-wider flex items-center">
+        <div className="flex items-center mx-[5%] justify-between gap-2">
+          <div className="flex items-center justify-between shadow-xl border-[1px] border-gray-100 rounded-md my-2 p-1 gap-4">
+            <h1 className="text-black text-14 font-normal leading-normal tracking-wider flex items-center gap-1">
               USDT
               <TLogoIcon />
             </h1>
@@ -42,13 +45,13 @@ export default function Card3({ item }: { item: ICard3 }) {
             </h2>
           </div>
 
-          <div className="flex items-center justify-between shadow-xl border-[1px] border-gray-100 rounded-md  my-2 p-1 w-[40%]">
-            <h1 className="text-black text-14 font-normal leading-normal tracking-wider flex items-center">
+          <div className="flex items-center justify-between shadow-xl border-[1px] border-gray-100 rounded-md my-2 p-1 gap-4">
+            <h1 className="text-black text-14 font-normal leading-normal tracking-wider flex items-center gap-1">
               BRL
               <BrasilIcon />
             </h1>
             <h2 className="text-black text-16 font-normal leading-normal tracking-wider">
-              R$ {item.priceBrl}
+              R${item.priceBrl}
             </h2>
           </div>
         </div>
@@ -60,7 +63,7 @@ export default function Card3({ item }: { item: ICard3 }) {
           </h1>
         </div>
 
-        <div className="flex flex-col rounded-b-lg bg-gradient-to-r from-[#7000FF] to-[#B338FF]">
+        <div className="flex flex-col bg-gradient-to-r from-[#7000FF] to-[#B338FF]">
           <div className="flex items-center gap-2 justify-center px-10 py-1">
             <div className="flex flex-col items-center shadow-2xl shadow-black bg-black rounded-md w-[30%] bg-opacity-40 backdrop-blur-md">
               <h1 className="text-white text-base font-normal tracking-wider">
@@ -97,6 +100,6 @@ export default function Card3({ item }: { item: ICard3 }) {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }

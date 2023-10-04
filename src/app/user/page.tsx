@@ -1,12 +1,15 @@
 "use client";
-import Card3 from "@/Components/Card3";
+import NFTCard from "@/Components/NFTCard";
 import Card3Withdraw from "@/Components/Card3Withdraw";
-import { Chart } from "@/Components/Chart";
+const Chart = dynamic(() =>
+  import("@/Components/Chart").then((mod) => mod.Chart)
+);
 import BolaQuadrado from "@/Components/Icons/BolaQuadrado";
 import CircleYang from "@/Components/Icons/CircleYang";
 import BtnPerfil from "@/Components/PerfilUsuario/BtnPerfil";
 import { useModalStore } from "@/stores";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 
 export default function Usuario() {
   const [activeCycles, setActiveCycles] = useState(true);
@@ -27,6 +30,7 @@ export default function Usuario() {
 
   const data = [
     {
+      id: "1",
       nftName: "Nelore#2540",
       priceUsdt: "20",
       priceBrl: "100",
@@ -39,6 +43,7 @@ export default function Usuario() {
       },
     },
     {
+      id: "2",
       nftName: "Nelore#2540",
       priceUsdt: "20",
       priceBrl: "100",
@@ -51,6 +56,7 @@ export default function Usuario() {
       },
     },
     {
+      id: "3",
       nftName: "Nelore#2540",
       priceUsdt: "20",
       priceBrl: "100",
@@ -170,7 +176,7 @@ export default function Usuario() {
             <Card3Withdraw />
             <Card3Withdraw />
             {data.map((item, index) => {
-              return <Card3 key={index} item={item} />;
+              return <NFTCard key={index} item={item} />;
             })}
           </div>
         ) : (
