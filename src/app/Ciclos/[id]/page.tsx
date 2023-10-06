@@ -4,7 +4,7 @@ import SearchBar from "@/Components/SearchBar";
 import NFTCard from "@/Components/NFTCard";
 import BtnRoxo from "@/Components/BtnRoxo";
 
-export default function CicloView() {
+export default function CiclosId() {
   const dataCiclosViewPerfil = {
     title: "Vagros 1° stake ciclo de produção",
   };

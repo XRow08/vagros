@@ -63,7 +63,7 @@ export default function ModalComprarCotas() {
         </div>
       </div>
       <div className="h-14 w-1/2" onClick={() => onBuyCicle("1", amount)}>
-        <BtnRoxo>SUPPLY USDT</BtnRoxo>
+        <BtnRoxo>{!isLoading ? "SUPPLY USDT" : "Carregando..."}</BtnRoxo>
       </div>
     </div>
   );

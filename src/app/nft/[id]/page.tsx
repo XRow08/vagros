@@ -1,3 +1,4 @@
+"use client"
 import DetalhesVaca from "@/Components/DetalhesVaca";
 import NftData from "@/Components/NftData";
 const Chart = dynamic(() =>

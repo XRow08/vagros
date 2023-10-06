@@ -33,7 +33,7 @@ export default function CiclosView2() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full h-full bg-white">
+    <div className="flex flex-col items-center w-full h-full bg-white px-[10%]">
       <div className="flex w-[90%] mt-[100px] gap-10">
         <div className="w-[50%]">
           <DetalhesVaca />

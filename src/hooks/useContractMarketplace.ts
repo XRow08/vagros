@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Vagros_marketplace__factory } from "@/contracts";
-import { allowlist_address, marketplace_address } from "@/constants";
+import { marketplace_address } from "@/constants";
 import { calculateGasLimit, getEthersSigner } from "@/helpers";
+import { useContractUSDT } from "./useContractUSDT";
 import toast from "react-hot-toast";
 
 export function useContractMarketplace() {
   const [isLoading, setIsLoading] = useState(false);
   const signer = getEthersSigner();
   const contract = Vagros_marketplace__factory.connect(
-    allowlist_address,
+    marketplace_address,
     signer!
   );
+  const { onApprove } = useContractUSDT();
 
   async function onBuyCicle(cicleId: string, amount: string) {
     setIsLoading(true);
@@ -23,8 +25,7 @@ export function useContractMarketplace() {
         Number(amount),
       ]);
       const gas = { gasLimit };
-      /* const initialize = await contract.initialize(marketplace_address); */
-     /*  console.log(initialize); */
+      await onApprove(amount);
       const transaction = await contract.buyCycle(
         Number(cicleId),
         Number(amount),
