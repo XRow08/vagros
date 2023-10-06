@@ -1,7 +1,7 @@
 import BannerCiclos from "@/Components/BannerCiclos";
 import CiclosSection from "@/Components/CiclosSection";
 
-export default function Ciclos() {
+export default function CiclesPage() {
   return (
     <div className="flex flex-col gap-28 w-full bg-black">
       <div className="mt-[150px]">
