@@ -83,7 +83,7 @@ export default function HomeSecondSection() {
               futuro mais sustentável e uma alimentação mundial mais justa.
             </Text>
           </span>
-          <a href="/ciclos" className="w-[259px] h-[56px]">
+          <a href="/cicles" className="w-[259px] h-[56px]">
             <BtnRoxo>CONHECER CICLOS</BtnRoxo>
           </a>
         </div>

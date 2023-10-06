@@ -108,7 +108,7 @@ export default function CicleCard({ item }: { item: ICiclo }) {
           </div>
         </div>
         <a
-          href={`/ciclos/${item.id}`}
+          href={`/cicles/${item.id}`}
           className="h-14 overflow-hidden rounded-b-xl"
         >
           <BtnAmarelo>DESCOBRIR MAIS</BtnAmarelo>
