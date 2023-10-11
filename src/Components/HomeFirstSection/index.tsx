@@ -1,7 +1,8 @@
+import { ICiclo } from "@/interfaces";
 import CiclosSection from "../Ciclos/CiclosSection";
 import { Carroussel } from "./Carroussel";
 
-export default function HomeFirstSection() {
+export default function HomeFirstSection({ cicles }: { cicles: ICiclo[] }) {
   return (
     <div className="flex flex-col items-center w-full bg-white shadow-xl">
       <div className="flex flex-col items-center p-4 lg:p-0 lg:px-[10%] lg:-mt-[10rem]">
@@ -15,14 +16,17 @@ export default function HomeFirstSection() {
               Conheça os novos ciclos exclusivos da Vagros
             </h2>
           </div>
-          <a href="/ciclos" className="text-black text-base text-end font-normal lg:text-xl font-archivo">
+          <a
+            href="/ciclos"
+            className="text-black text-base text-end font-normal lg:text-xl font-archivo"
+          >
             Ver todos
           </a>
         </div>
 
         <div className="flex flex-col w-full items-center m-10 ">
           <div className="flex items-center justify-center w-full gap-7">
-            <CiclosSection />
+            <CiclosSection cicles={cicles} />
           </div>
         </div>
       </div>
