@@ -1,24 +1,34 @@
-'use client'
-import BtnRoxo from "../BtnRoxo";
-import Bull2 from "../Icons/Bull2";
-import Diamond from "../Icons/Diamond";
-import Grafico1 from "../Icons/Grafico1";
-import Grafico2 from "../Icons/Grafico2";
-import InterrogacaoIcon from "../Icons/InterrogacaoIcon";
-import Relogio from "../Icons/Relogio";
-import ProgressBar from "../ProgressBar";
+import { ICiclo } from "@/interfaces";
+import BtnRoxo from "../../BtnRoxo";
+import Bull2 from "../../Icons/Bull2";
+import Diamond from "../../Icons/Diamond";
+import Grafico1 from "../../Icons/Grafico1";
+import Grafico2 from "../../Icons/Grafico2";
+import InterrogacaoIcon from "../../Icons/InterrogacaoIcon";
+import Relogio from "../../Icons/Relogio";
+import ProgressBar from "../../ProgressBar";
 import { useModalStore } from "@/stores";
-import { ICiclosViewInfoSection } from "@/interfaces/ICiclosViewInfoSection";
+import { useGetUSDT } from "@/hooks/useGetUSDT";
+import { DateFormat } from "@/helpers/DateFormat";
+import { useCountDown } from "@/hooks/useCountDown";
 
-
-export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoSection }) {
-  const { setShowModalComprarCotas } = useModalStore()
+export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
+  const { setShowModalComprarCotas } = useModalStore();
+  const { price } = useGetUSDT();
+  const { isoToTimestamp, secToDays } = DateFormat;
+  const timestamp = isoToTimestamp(item?.closingDate!);
+  const timer = useCountDown(timestamp);
+  const days = secToDays(timer!).toFixed();
+  const curValue = Number(item?.curValue).toLocaleString("pt-BR");
+  const curValueBRL = (Number(item?.curValue) * price).toLocaleString("pt-BR");
+  const minValue = Number(item?.minValue).toLocaleString("pt-BR");
+  const minValueBRL = (Number(item?.minValue) * price).toLocaleString("pt-BR");
 
   return (
     <div className="flex flex-col w-full h-[480px] bg-white rounded-lg p-5  shadow-lg">
       <div className="flex flex-col gap-4 w-full h-full">
         <h1 className="text-black font-Archivo text-2xl font-bold leading-normal tracking-wider">
-          Vagros 1° stake ciclo de produção
+          {item?.description}
         </h1>
 
         <div className="flex gap-20">
@@ -31,13 +41,13 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
               <div className="text-black">
                 <div className="flex items-center justify-between gap-2">
                   <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                  Stake Beef
+                    Stake Beef
                   </h1>
                   <InterrogacaoIcon />
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                {item.stakeBeef} APY
+                  {item?.stakeBeef} APY
                 </h2>
               </div>
             </div>
@@ -55,7 +65,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                 {item.producaoAlvo} @
+                  {20} @
                 </h2>
               </div>
             </div>
@@ -73,7 +83,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  R$ {item.cycleValue}
+                  USDT {curValue} / BRL {curValueBRL}
                 </h2>
               </div>
             </div>
@@ -91,7 +101,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                 {item.prazo} Dias
+                  {days} Dias
                 </h2>
               </div>
             </div>
@@ -112,7 +122,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  R$ {item.minValue}
+                  USDT {minValue} / BRL {minValueBRL}
                 </h2>
               </div>
             </div>
@@ -130,7 +140,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  {item.modalidade}
+                  Arroba produzida
                 </h2>
               </div>
             </div>
@@ -149,21 +159,21 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                 {item.quantidade} @
+                  {20} @
                 </h2>
               </div>
             </div>
           </div>
         </div>
 
-        <ProgressBar></ProgressBar>
+        <ProgressBar curValue={curValue} curValueBRL={curValueBRL} />
 
         <div className="flex items-center justify-between">
           <div className="flex flex-col w-[40%]">
             <div className="flex items-center gap-2 justify-between w-full">
               <div className="flex flex-col items-center bg-white rounded-md w-[30%] pt-[2%] pb-[2%] bg-opacity-40 backdrop-blur-md shadow-xl">
                 <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">
-                  {item.date.days}
+                  {20}
                 </h1>
                 <h2 className="text-black font-Archivo text-xs font-normal leading-normal tracking-wider">
                   dias
@@ -172,7 +182,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
 
               <div className="flex flex-col items-center bg-white rounded-md w-[30%] pt-[2%] pb-[2%] bg-opacity-40 backdrop-blur-md shadow-xl">
                 <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">
-                {item.date.hours}
+                  {5}
                 </h1>
                 <h2 className="text-black font-Archivo text-xs font-normal leading-normal tracking-wider">
                   horas
@@ -181,7 +191,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
 
               <div className="flex flex-col items-center bg-white rounded-md w-[30%] pt-[2%] pb-[2%] bg-opacity-40 backdrop-blur-md shadow-xl">
                 <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">
-                {item.date.mins}
+                  {25}
                 </h1>
                 <h2 className="text-black font-Archivo text-xs font-normal leading-normal tracking-wider">
                   min
@@ -190,7 +200,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
 
               <div className="flex flex-col items-center bg-white rounded-md w-[30%] pt-[2%] pb-[2%] bg-opacity-40 backdrop-blur-md shadow-xl">
                 <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">
-                {item.date.segs}
+                  {46}
                 </h1>
                 <h2 className="text-black font-Archivo text-xs font-normal leading-normal tracking-wider">
                   seg
@@ -199,7 +209,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclosViewInfoS
             </div>
           </div>
 
-          <div onClick={() => setShowModalComprarCotas(true)} className="flex w-[40%] h-[50px]">
+          <div
+            onClick={() => setShowModalComprarCotas(true)}
+            className="flex w-[40%] h-[50px]"
+          >
             <BtnRoxo>PARTICIPAR DO CICLO</BtnRoxo>
           </div>
         </div>

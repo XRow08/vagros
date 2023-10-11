@@ -1,4 +1,4 @@
-import CiclosSection from "../CiclosSection";
+import CiclosSection from "../Ciclos/CiclosSection";
 import { Carroussel } from "./Carroussel";
 
 export default function HomeFirstSection() {

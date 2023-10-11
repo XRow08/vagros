@@ -1,6 +1,6 @@
 import { useModalStore } from "@/stores/modalStore";
-import Metamask from "../Icons/Metamask";
-import X from "../Icons/X";
+import Metamask from "../../Icons/Metamask";
+import X from "../../Icons/X";
 import Link from "next/link";
 import { useAuthContext } from "@/Contexts";
 

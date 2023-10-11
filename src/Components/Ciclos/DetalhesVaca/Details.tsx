@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import ArrowDown from "../Icons/ArrowDown";
-import IdCard from "../Icons/IdCard";
-import Books from "../Icons/Books";
+import ArrowDown from "../../Icons/ArrowDown";
+import IdCard from "../../Icons/IdCard";
+import Books from "../../Icons/Books";
 import { IDetails } from "@/interfaces/IDetails";
 
 export function Details({ item }: { item: IDetails }) {
@@ -11,8 +11,8 @@ export function Details({ item }: { item: IDetails }) {
   return (
     <div
       className={`${
-        !open && "h-[300px]"
-      } flex flex-col items-center justify-between mt-[15px] p-3 px-4 w-full transition-all duration-300 ease-in-out bg-white rounded-lg shadow-2xl`}
+        !open ? "h-[300px]" : "h-12"
+      } flex flex-col absolute left-0 top-0 items-center justify-between mt-[15px] p-3 px-4 w-full transition-all duration-300 ease-in-out overflow-hidden bg-white rounded-lg shadow-2xl`}
     >
       <div
         onClick={() => setOpen(!open)}

@@ -1,6 +1,7 @@
 import ConnectWalletButton from "./ConnectWalletButton";
 import MenuItens from "./MenuItens";
 import { MenuIcon } from "../Icons/MenuIcon";
+import { OnOffIcon } from "../Icons/OnOffIcon";
 
 export function Header() {
   return (
@@ -15,8 +16,9 @@ export function Header() {
       <div className="flex-grow hidden lg:flex justify-center">
         <MenuItens />
       </div>
-      <div className="hidden lg:block absolute right-20">
+      <div className="hidden absolute right-20 lg:flex items-center gap-4">
         <ConnectWalletButton />
+        <OnOffIcon />
       </div>
       <div className="lg:hidden">
         <MenuIcon />

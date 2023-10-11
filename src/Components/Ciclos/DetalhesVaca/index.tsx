@@ -1,4 +1,4 @@
-import Circle from "../Icons/Circle";
+import Circle from "../../Icons/Circle";
 import { Details } from "./Details";
 
 export default function DetalhesVaca() {
@@ -12,7 +12,7 @@ export default function DetalhesVaca() {
   };
 
   return (
-    <div className="flex flex-col w-full bg-white">
+    <div className="flex flex-col w-3/5 bg-white">
       <div className="flex flex-col items-center">
         <div className="flex w-full items-center rounded-lg shadow-2xl">
           <div className="absolute flex items-center gap-2 top-0 left-0 p-2 pl-3">
@@ -28,7 +28,8 @@ export default function DetalhesVaca() {
             />
           </div>
         </div>
-
+      </div>
+      <div className="relative">
         <Details item={data} />
       </div>
     </div>

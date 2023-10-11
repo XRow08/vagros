@@ -1,4 +1,4 @@
-import DetalhesVaca from "@/Components/DetalhesVaca";
+import DetalhesVaca from "@/Components/Ciclos/DetalhesVaca";
 import WithdrawalDescription from "@/Components/WithdrawalDescription";
 import WithdrawalPanel from "@/Components/WithdrawalPanel";
 

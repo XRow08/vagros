@@ -1,10 +1,12 @@
-export default function ProgressBar() {
+export default function ProgressBar({ curValue, curValueBRL }: any) {
   return (
     <div className="flex flex-col relative items-center w-full bg-white">
       <div className="flex flex-col w-full">
         <div className="flex justify-between mb-1 text-black">
-          <span className="text-base font-medium">Status: <span className="text-sm font-medium">61.75%</span></span>
-          <span className="text-sm font-medium">R$ 250.000,00</span>
+          <span className="text-base font-medium">
+            Status: <span className="text-sm font-medium">61.75%</span>
+          </span>
+          <span className="text-sm font-medium">USDT {curValue} / BRL {curValueBRL}</span>
         </div>
         <div className="w-full rounded-sm bg-[#DFDFDF] h-[40px] shadow-2xl">
           <div className="bg-gradient-to-r rounded-sm from-yellow-300 to-orange-500 h-full w-[61.75%]"></div>
@@ -14,5 +16,5 @@ export default function ProgressBar() {
         </div>
       </div>
     </div>
-  )
+  );
 }

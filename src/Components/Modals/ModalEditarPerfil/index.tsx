@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
-import BtnRoxo from "../BtnRoxo";
-import X from "../Icons/X";
-import AddPic from "../Icons/AddPic";
+import BtnRoxo from "../../BtnRoxo";
+import X from "../../Icons/X";
+import AddPic from "../../Icons/AddPic";
 import { useModalStore } from "@/stores";
 
 export default function ModalEditarPerfil() {

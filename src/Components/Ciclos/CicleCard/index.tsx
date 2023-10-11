@@ -1,34 +1,36 @@
-import Diamond from "../Icons/Diamond";
-import Grafico1 from "../Icons/Grafico1";
-import Grafico2 from "../Icons/Grafico2";
-import Relogio from "../Icons/Relogio";
-import Circle from "../Icons/Circle";
-import InterrogacaoIcon from "../Icons/InterrogacaoIcon";
+import Diamond from "../../Icons/Diamond";
+import Grafico1 from "../../Icons/Grafico1";
+import Grafico2 from "../../Icons/Grafico2";
+import Relogio from "../../Icons/Relogio";
+import InterrogacaoIcon from "../../Icons/InterrogacaoIcon";
 import type { ICiclo } from "@/interfaces/ICiclo";
-import BtnAmarelo from "../BtnAmarelo";
+import BtnAmarelo from "../../BtnAmarelo";
+import { DateFormat } from "@/helpers/DateFormat";
+import { useGetUSDT } from "@/hooks/useGetUSDT";
+import { useCountDown } from "@/hooks/useCountDown";
 
 export default function CicleCard({ item }: { item: ICiclo }) {
+  const { price } = useGetUSDT();
+  const { isoToTimestamp, secToDays } = DateFormat;
+  const timestamp = isoToTimestamp(item.closingDate);
+  const timer = useCountDown(timestamp);
+  const minValue = Number(item.minValue).toLocaleString("pt-BR");
+  const minValueBRL = (Number(item.minValue) * price).toLocaleString("pt-BR");
+  const curValue = Number(item.curValue).toLocaleString("pt-BR");
+  const curValueBRL = (Number(item.curValue) * price).toLocaleString("pt-BR");
+
   return (
-    <div className="flex flex-col justify-between rounded-xl shadow-2xl w-full bg-white text-black transition-all duration-300 ease-in-out hover:-translate-y-2">
-      <div className="relative">
-        <img
-          src="/images/card-img.png"
-          alt="card-img"
-          className="w-full h-auto"
-        />
-        {item.live && (
-          <div className="absolute flex items-center gap-2 top-0 left-0 p-2 pl-3">
-            <h1 className=" text-white font-semibold">AO VIVO</h1>
-            <Circle />
-          </div>
-        )}
-        <img src={item.img} alt="" className="absolute top-0 right-0 p-4" />
-      </div>
+    <div className="flex flex-col justify-between rounded-xl overflow-hidden shadow-2xl w-full bg-white text-black transition-all duration-300 ease-in-out hover:-translate-y-2">
+      <img
+        src={item.thumbnail}
+        alt="card-img"
+        className="w-full h-[360px] object-fill object-center"
+      />
 
       <div className="flex flex-col gap-3">
         <div className="shadow-sm p-1 pl-2">
           <h1 className="text-black font-archivo font-semibold text-18 leading-normal tracking-wide">
-            {item.title}
+            {item.description}
           </h1>
         </div>
 
@@ -66,7 +68,7 @@ export default function CicleCard({ item }: { item: ICiclo }) {
               </div>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                R$ {item.minValue}
+                USDT {minValue} / BRL {minValueBRL}
               </h2>
             </div>
           </div>
@@ -84,7 +86,7 @@ export default function CicleCard({ item }: { item: ICiclo }) {
               </div>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                R$ {item.cycleValue}
+                USDT {curValue} / BRL {curValueBRL}
               </h2>
             </div>
           </div>
@@ -102,7 +104,7 @@ export default function CicleCard({ item }: { item: ICiclo }) {
               </div>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                {item.prazo} dias
+                {secToDays(timer!).toFixed()} dias
               </h2>
             </div>
           </div>

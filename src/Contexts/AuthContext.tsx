@@ -6,6 +6,7 @@ import { TorusWalletConnectorPlugin } from "@web3auth/torus-wallet-connector-plu
 import { createContext, useContext, useEffect, useState } from "react";
 import RPC from "./web3RPC";
 import { StorageHelper } from "@/helpers";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 const clientId =
   "BMmz5k221pU8zkxdtVaalNy01l8HwyZsuQAQuRjZf6vNJQFwT3_M6bowmuVmaX33SXOlh_MfYxEz_rPSWnk34jg";
 
@@ -237,6 +238,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       el.innerHTML = JSON.stringify(args || {}, null, 2);
     }
   }
+  const client = new ApolloClient({
+    uri: "https://vagros-api.onrender.com/graphql",
+    cache: new InMemoryCache(),
+  });
 
   return (
     <AuthContext.Provider
@@ -249,9 +254,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         getUserInfo,
         loggedIn,
         switchChain,
+        logout,
       }}
     >
-      {children}
+      <ApolloProvider client={client}>{children}</ApolloProvider>
     </AuthContext.Provider>
   );
 }

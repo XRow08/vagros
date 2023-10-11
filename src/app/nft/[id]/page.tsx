@@ -1,5 +1,5 @@
 "use client"
-import DetalhesVaca from "@/Components/DetalhesVaca";
+import DetalhesVaca from "@/Components/Ciclos/DetalhesVaca";
 import NftData from "@/Components/NftData";
 const Chart = dynamic(() =>
   import("@/Components/Chart").then((mod) => mod.Chart)
