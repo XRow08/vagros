@@ -4,6 +4,7 @@ export interface ICiclo {
   description: string;
   thumbnail: string;
   video: string;
+  chainId: string;
   minValue: string;
   curValue: string;
   totalValue: string;

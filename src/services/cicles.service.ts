@@ -19,6 +19,7 @@ export const CiclesService = {
             stakeBeef
             description
             thumbnail
+            chainId
             video
             minValue
             curValue
@@ -41,6 +42,7 @@ export const CiclesService = {
             stakeBeef
             description
             thumbnail
+            chainId
             video
             minValue
             curValue
