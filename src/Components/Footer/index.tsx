@@ -1,3 +1,4 @@
+"use client";
 export default function Footer() {
   return (
     <div className="flex flex-col p-12 pr-28 pl-28 gap-5 bg-[#131313]">

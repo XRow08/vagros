@@ -1,3 +1,4 @@
+"use client";
 import ConnectWalletButton from "./ConnectWalletButton";
 import MenuItens from "./MenuItens";
 import { MenuIcon } from "../Icons/MenuIcon";
