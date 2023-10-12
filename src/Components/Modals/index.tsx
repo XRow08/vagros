@@ -1,3 +1,4 @@
+"use client";
 import ModalComprarCotas from "./ModalComprarCotas";
 import ModalConectarCarteira from "./ModalConectarCarteira";
 import ModalEditarPerfil from "./ModalEditarPerfil";
