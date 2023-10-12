@@ -13,8 +13,23 @@ function secToDays(secs: number) {
   return secs / segundosEmUmDia;
 }
 
+function timestampToDate(timestamp: number) {
+  const sec = Math.floor((timestamp / 1000) % 60);
+  const min = Math.floor((timestamp / (1000 * 60)) % 60);
+  const hours = Math.floor((timestamp / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(timestamp / (1000 * 60 * 60 * 24));
+
+  return {
+    days,
+    hours,
+    min,
+    sec,
+  };
+}
+
 export const DateFormat = {
   toFormat,
   isoToTimestamp,
   secToDays,
+  timestampToDate,
 };

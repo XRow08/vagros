@@ -44,7 +44,7 @@ export default function AboutProject({
                 id="ytplayer"
                 allowFullScreen
                 className="h-full w-full object-cover rounded-xl"
-                src={`https://www.youtube.com/embed/${videoID}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
+                src={`https://www.youtube.com/embed/${videoID}?autoplay=1&loop=1&playlist=${videoID}`}
               />
             </div>
           </div>

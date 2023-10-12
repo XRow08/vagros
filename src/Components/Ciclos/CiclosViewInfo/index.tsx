@@ -1,16 +1,10 @@
 import { useCicleStore } from "@/stores/cicleStore";
 import CiclosViewInfoItem from "../CiclosViewInfoItem";
 import { useGetUSDT } from "@/hooks/useGetUSDT";
-import { DateFormat } from "@/helpers/DateFormat";
-import { useCountDown } from "@/hooks/useCountDown";
 
 export default function CiclosViewInfo() {
   const { selectedCicle: item } = useCicleStore();
   const { price } = useGetUSDT();
-  const { isoToTimestamp, secToDays } = DateFormat;
-  const timestamp = isoToTimestamp(item?.closingDate!);
-  const timer = useCountDown(timestamp);
-  const days = secToDays(timer!).toFixed();
   const minValue = Number(item?.minValue).toLocaleString("pt-BR");
   const minValueBRL = (Number(item?.minValue) * price).toLocaleString("pt-BR");
 
@@ -33,7 +27,7 @@ export default function CiclosViewInfo() {
     },
     {
       title: "Prazo",
-      value: `${days} dias`,
+      value: `150 dias`,
     },
     {
       title: "Stake beef",

@@ -9,18 +9,15 @@ import Relogio from "../../Icons/Relogio";
 import ProgressBar from "../../ProgressBar";
 import { useModalStore } from "@/stores";
 import { useGetUSDT } from "@/hooks/useGetUSDT";
-import { DateFormat } from "@/helpers/DateFormat";
-import { useCountDown } from "@/hooks/useCountDown";
+import { DateInfo } from "./DateInfo";
 
 export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
   const { setShowModalComprarCotas } = useModalStore();
   const { price } = useGetUSDT();
-  const { isoToTimestamp, secToDays } = DateFormat;
-  const timestamp = isoToTimestamp(item?.closingDate!);
-  const timer = useCountDown(timestamp);
-  const days = secToDays(timer!).toFixed();
-  const curValue = Number(item?.curValue).toLocaleString("pt-BR");
-  const curValueBRL = (Number(item?.curValue) * price).toLocaleString("pt-BR");
+  const totalValue = Number(item?.totalValue).toLocaleString("pt-BR");
+  const totalValueBRL = (Number(item?.totalValue) * price).toLocaleString(
+    "pt-BR"
+  );
   const minValue = Number(item?.minValue).toLocaleString("pt-BR");
   const minValueBRL = (Number(item?.minValue) * price).toLocaleString("pt-BR");
 
@@ -83,7 +80,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  USDT {curValue} / BRL {curValueBRL}
+                  USDT {totalValue} / BRL {totalValueBRL}
                 </h2>
               </div>
             </div>
@@ -101,7 +98,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  {days} Dias
+                  150 Dias
                 </h2>
               </div>
             </div>
@@ -166,48 +163,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
           </div>
         </div>
 
-        <ProgressBar curValue={curValue} curValueBRL={curValueBRL} />
+        <ProgressBar curValue={totalValue} curValueBRL={totalValueBRL} />
 
         <div className="flex items-center justify-between">
-          <div className="flex flex-col w-[40%]">
-            <div className="flex items-center gap-2 justify-between w-full">
-              <div className="flex flex-col items-center bg-white rounded-md w-[30%] pt-[2%] pb-[2%] bg-opacity-40 backdrop-blur-md shadow-xl">
-                <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">
-                  {20}
-                </h1>
-                <h2 className="text-black font-Archivo text-xs font-normal leading-normal tracking-wider">
-                  dias
-                </h2>
-              </div>
-
-              <div className="flex flex-col items-center bg-white rounded-md w-[30%] pt-[2%] pb-[2%] bg-opacity-40 backdrop-blur-md shadow-xl">
-                <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">
-                  {5}
-                </h1>
-                <h2 className="text-black font-Archivo text-xs font-normal leading-normal tracking-wider">
-                  horas
-                </h2>
-              </div>
-
-              <div className="flex flex-col items-center bg-white rounded-md w-[30%] pt-[2%] pb-[2%] bg-opacity-40 backdrop-blur-md shadow-xl">
-                <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">
-                  {25}
-                </h1>
-                <h2 className="text-black font-Archivo text-xs font-normal leading-normal tracking-wider">
-                  min
-                </h2>
-              </div>
-
-              <div className="flex flex-col items-center bg-white rounded-md w-[30%] pt-[2%] pb-[2%] bg-opacity-40 backdrop-blur-md shadow-xl">
-                <h1 className="text-black font-Archivo text-base font-normal leading-normal tracking-wider">
-                  {46}
-                </h1>
-                <h2 className="text-black font-Archivo text-xs font-normal leading-normal tracking-wider">
-                  seg
-                </h2>
-              </div>
-            </div>
-          </div>
+          <DateInfo date={item?.closingDate} />
 
           <div
             onClick={() => setShowModalComprarCotas(true)}

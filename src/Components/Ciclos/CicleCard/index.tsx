@@ -16,9 +16,12 @@ export default function CicleCard({ item }: { item: ICiclo }) {
   const timer = useCountDown(timestamp);
   const minValue = Number(item.minValue).toLocaleString("pt-BR");
   const minValueBRL = (Number(item.minValue) * price).toLocaleString("pt-BR");
-  const curValue = Number(item.curValue).toLocaleString("pt-BR");
-  const curValueBRL = (Number(item.curValue) * price).toLocaleString("pt-BR");
-
+  const totalValue = Number(item.totalValue).toLocaleString("pt-BR");
+  const totalValueBRL = (Number(item.totalValue) * price).toLocaleString(
+    "pt-BR"
+  );
+  const date = secToDays(timer!).toFixed();
+  console.log(item);
   return (
     <div className="flex flex-col justify-between rounded-xl overflow-hidden shadow-2xl w-full bg-white text-black transition-all duration-300 ease-in-out hover:-translate-y-2">
       <img
@@ -86,7 +89,7 @@ export default function CicleCard({ item }: { item: ICiclo }) {
               </div>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                USDT {curValue} / BRL {curValueBRL}
+                USDT {totalValue} / BRL {totalValueBRL}
               </h2>
             </div>
           </div>
@@ -104,7 +107,7 @@ export default function CicleCard({ item }: { item: ICiclo }) {
               </div>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                {secToDays(timer!).toFixed()} dias
+                150 dias
               </h2>
             </div>
           </div>
