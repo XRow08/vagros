@@ -33,9 +33,15 @@ function Next({
 
 export function Carroussel() {
   const [state, setState] = useState(0);
+  const videos = [
+    "/videos/corte1.mp4",
+    "/videos/corte2.mp4",
+    "/videos/corte3.mp4",
+    "/videos/corte4.mp4",
+    "/videos/corte5.mp4",
+  ];
 
   async function next() {
-    console.log(state);
     setState(state + 1);
   }
 
@@ -64,12 +70,13 @@ export function Carroussel() {
         {...carouselConfig}
         onChange={(n) => updateCurrentSlide(n)}
         selectedItem={state}
-        className="w-full"
+        className="w-full overflow-hidden"
       >
-        <div className="w-full h-[400px] rounded-lg bg-[#E9E9E9]">asdasdas</div>
-        <div className="w-full h-[400px] rounded-lg bg-[#E9E9E9]">asdasdas</div>
-        <div className="w-full h-[400px] rounded-lg bg-[#E9E9E9]">asdasdas</div>
-        <div className="w-full h-[400px] rounded-lg bg-[#E9E9E9]">asdasdas</div>
+        {videos.map((e) => (
+          <video key={e} loop controls className="w-full h-[400px] rounded-lg object-cover object-center">
+            <source src={e} type="video/mp4" />
+          </video>
+        ))}
       </Carousel>
       <Next back onClick={() => next()} />
     </div>
