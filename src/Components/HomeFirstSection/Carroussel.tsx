@@ -22,8 +22,8 @@ function Next({
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M13.5685 0.768959C14.3636 1.40507 14.4925 2.56533 13.8564 3.36047L4.94449 14.5004L13.8564 25.6402C14.4925 26.4354 14.3636 27.5956 13.5685 28.2318C12.7733 28.8679 11.6131 28.7389 10.977 27.9438L1.14362 15.6521C0.604917 14.9788 0.604917 14.0219 1.14362 13.3486L10.977 1.0569C11.6131 0.261765 12.7733 0.132848 13.5685 0.768959Z"
         fill="black"
       />
@@ -73,7 +73,12 @@ export function Carroussel() {
         className="w-full overflow-hidden"
       >
         {videos.map((e) => (
-          <video key={e} loop controls className="w-full h-[400px] rounded-lg object-cover object-center">
+          <video
+            key={e}
+            loop
+            controls
+            className="w-full h-[400px] rounded-lg object-cover object-center"
+          >
             <source src={e} type="video/mp4" />
           </video>
         ))}
