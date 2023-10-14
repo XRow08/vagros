@@ -14,7 +14,7 @@ export default function ModalComprarCotas() {
   const { priceReal, setAmount, amount, price, priceCicle, setPriceCicle } =
     useGetUSDT();
   const { selectedCicle } = useCicleStore();
-  const chainId = selectedCicle?.chainId;
+  const tokenId = selectedCicle?.tokenId;
   const minValue = Number(selectedCicle?.minValue).toLocaleString("pt-BR");
   const minValueBRL = (Number(selectedCicle?.minValue) * price).toLocaleString(
     "pt-BR"
@@ -69,7 +69,7 @@ export default function ModalComprarCotas() {
           <TLogoIcon size="w-[40px]" />
         </div>
       </div>
-      <div className="h-14 w-1/2" onClick={() => onBuyCicle(chainId!, amount)}>
+      <div className="h-14 w-1/2" onClick={() => onBuyCicle(tokenId!, amount)}>
         <BtnRoxo>{!isLoading ? "FORNECER USDT" : "CARREGANDO..."}</BtnRoxo>
       </div>
     </div>

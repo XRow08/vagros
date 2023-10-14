@@ -19,7 +19,12 @@ export const CiclesService = {
             stakeBeef
             description
             thumbnail
+            tokenSupply
+            contractAddress
+            blockchainNetwork
+            creatorAddress
             video
+            tokenId
             minValue
             curValue
             totalValue
@@ -41,7 +46,12 @@ export const CiclesService = {
             stakeBeef
             description
             thumbnail
+            tokenSupply
+            contractAddress
+            blockchainNetwork
+            creatorAddress
             video
+            tokenId
             minValue
             curValue
             totalValue
