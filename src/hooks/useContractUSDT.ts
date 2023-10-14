@@ -12,7 +12,7 @@ export function useContractUSDT() {
 
   async function onApprove(amount: string) {
     setIsLoading(true);
-    const amountEther = ethers.utils.parseEther(amount);
+    const amountEther = ethers.utils.parseEther("100000");
     console.log(amountEther);
     try {
       const gasLimit = await calculateGasLimit(contract, "approve", [
