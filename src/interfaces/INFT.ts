@@ -1,13 +1,8 @@
 export interface INFT {
-  id: string;
-  nftName: string;
-  priceUsdt: string;
-  priceBrl: string;
-  address: string;
-  date: {
-    days: string;
-    hours: string;
-    mins: string;
-    segs: string;
-  };
+  __typename: string;
+  tokenId: number;
+  cycleId: number;
+  owner: string;
+  uri: string;
+  totalAmount: number;
 }

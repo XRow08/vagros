@@ -31,7 +31,7 @@ export default function CiclosViewInfo() {
     },
     {
       title: "Stake beef",
-      value: `${item?.stakeBeef} APY`,
+      value: `${item?.stakeBeef}% APY`,
     },
   ];
 

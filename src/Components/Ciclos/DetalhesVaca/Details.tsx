@@ -3,15 +3,18 @@ import { useState } from "react";
 import ArrowDown from "../../Icons/ArrowDown";
 import IdCard from "../../Icons/IdCard";
 import Books from "../../Icons/Books";
-import { IDetails } from "@/interfaces/IDetails";
+import type { ICiclo } from "@/interfaces";
+import { AddressUtils } from "@/helpers/AddressUtils";
 
-export function Details({ item }: { item: IDetails }) {
+export function Details({ item }: { item: ICiclo }) {
   const [open, setOpen] = useState(false);
+  const address = AddressUtils.hideAddress(item.contractAddress);
+  const creatorAddress = AddressUtils.hideAddress(item.creatorAddress);
 
   return (
     <div
       className={`${
-        !open ? "h-[300px]" : "h-12"
+        open ? "h-[300px]" : "h-12"
       } flex flex-col absolute left-0 top-0 items-center justify-between mt-[15px] p-3 px-4 w-full transition-all duration-300 ease-in-out overflow-hidden bg-white rounded-lg shadow-2xl`}
     >
       <div
@@ -30,7 +33,7 @@ export function Details({ item }: { item: IDetails }) {
       </div>
 
       <span className="w-full h-full">
-        {!open ? (
+        {open && (
           <div className="grid grid-cols-2 w-full h-full mt-[20px]">
             <div>
               <h1 className="text-black font-Archivo text-md font-normal leading-normal tracking-wider">
@@ -38,7 +41,7 @@ export function Details({ item }: { item: IDetails }) {
               </h1>
               <div className="flex gap-2">
                 <h1 className="text-black font-Archivo text-lg font-bold leading-normal tracking-wider">
-                  {item.contractAddress}
+                  {address}
                 </h1>
                 <Books />
               </div>
@@ -58,7 +61,7 @@ export function Details({ item }: { item: IDetails }) {
                 Token standard
               </h1>
               <h1 className="text-black font-Archivo text-lg font-bold leading-normal tracking-wider">
-                {item.tokenStandart}
+                ERC721
               </h1>
             </div>
 
@@ -67,7 +70,7 @@ export function Details({ item }: { item: IDetails }) {
                 Blockchain
               </h1>
               <h1 className="text-black font-Archivo text-lg font-bold leading-normal tracking-wider">
-                {item.blockchain}
+                {item.blockchainNetwork}
               </h1>
             </div>
 
@@ -76,7 +79,7 @@ export function Details({ item }: { item: IDetails }) {
                 Token supply
               </h1>
               <h1 className="text-black font-Archivo text-lg font-bold leading-normal tracking-wider">
-                {item.totalSupply}
+                {item.tokenSupply}
               </h1>
             </div>
 
@@ -85,12 +88,10 @@ export function Details({ item }: { item: IDetails }) {
                 Creator
               </h1>
               <h1 className="text-black font-Archivo text-lg font-bold leading-normal tracking-wider">
-                {item.creator}
+                {creatorAddress}
               </h1>
             </div>
           </div>
-        ) : (
-          ""
         )}
       </span>
     </div>

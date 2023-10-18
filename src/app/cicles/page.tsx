@@ -1,17 +1,20 @@
 "use client";
 import BannerCiclos from "@/Components/BannerCiclos";
 import CiclosSection from "@/Components/Ciclos/CiclosSection";
+import LoadingScreen from "@/Components/LoadingScreen";
 import { StorageHelper } from "@/helpers";
-import { CiclesService } from "@/services/cicles.service";
+import { CiclesService } from "@/services";
 import { useCicleStore } from "@/stores/cicleStore";
 import { useEffect } from "react";
 
 export default function CiclesPage() {
   const { setCicles, cicles } = useCicleStore();
-  
+
   useEffect(() => {
     async function onFunc() {
       try {
+        const cicles = StorageHelper.getItem("cicles");
+        if (cicles) return setCicles(cicles);
         const data = await CiclesService.getAllCicles();
         StorageHelper.setItem("cicles", data);
         setCicles(data);
@@ -21,6 +24,8 @@ export default function CiclesPage() {
     }
     onFunc();
   }, []);
+
+  if (!cicles || cicles.length === 0) return <LoadingScreen />;
 
   return (
     <div className="flex flex-col gap-28 w-full bg-black">

@@ -1,12 +1,6 @@
 import { ICiclo } from "@/interfaces";
-import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-
-const createApolloClient = () => {
-  return new ApolloClient({
-    uri: "https://vagros-api.onrender.com/graphql",
-    cache: new InMemoryCache(),
-  });
-};
+import { createApolloClient } from "./index";
+import { gql } from "@apollo/client";
 
 export const CiclesService = {
   async getAllCicles(): Promise<ICiclo[]> {
@@ -16,19 +10,24 @@ export const CiclesService = {
         query {
           Cycles {
             id
+            cycleId
+            tokenId
+            contractAddress
+            blockchainNetwork
+            tokenSupply
             stakeBeef
             description
             thumbnail
-            tokenSupply
-            contractAddress
-            blockchainNetwork
-            creatorAddress
             video
-            tokenId
             minValue
             curValue
             totalValue
             closingDate
+            creatorAddress
+            targetProduct
+            quantity
+            percentage
+            modality
           }
         }
       `,
@@ -43,19 +42,24 @@ export const CiclesService = {
         query {
           Cycle(id: "${cycleId}") {
             id
+            cycleId
+            tokenId
+            contractAddress
+            blockchainNetwork
+            tokenSupply
             stakeBeef
             description
             thumbnail
-            tokenSupply
-            contractAddress
-            blockchainNetwork
-            creatorAddress
             video
-            tokenId
             minValue
             curValue
             totalValue
             closingDate
+            creatorAddress
+            targetProduct
+            quantity
+            percentage
+            modality
           }
         }
       `,

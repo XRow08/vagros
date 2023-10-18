@@ -8,15 +8,32 @@ import { useEffect } from "react";
 import { StorageHelper } from "@/helpers";
 import { ICiclo } from "@/interfaces";
 import { useGetUSDT } from "@/hooks/useGetUSDT";
+import { NFTService } from "@/services";
+import { useNFTStore } from "@/stores/nftStore";
+import NFTCard from "@/Components/NFTCard";
+import LoadingScreen from "@/Components/LoadingScreen";
 
 export default function CiclesId({ params }: { params: { id: string } }) {
   const { setSelectedCicle, selectedCicle } = useCicleStore();
+  const { setNFTs, NFTs } = useNFTStore();
   const { price } = useGetUSDT();
 
   useEffect(() => {
-    const cicles: ICiclo[] = StorageHelper.getItem("cicles");
-    const cicle = cicles.find((e) => e.id === params.id);
-    setSelectedCicle(cicle!);
+    async function getAlls() {
+      try {
+        const cicles: ICiclo[] = StorageHelper.getItem("cicles");
+        const cicle = cicles.find((e) => e.id === params.id);
+        setSelectedCicle(cicle!);
+        const nftAll = StorageHelper.getItem("nfts");
+        if (nftAll) return setNFTs(nftAll);
+        const nfts = await NFTService.getAllNFT();
+        StorageHelper.setItem("nfts", nfts);
+        setNFTs(nfts);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getAlls();
   }, [params]);
 
   const totalValue = Number(selectedCicle?.totalValue).toLocaleString("pt-BR");
@@ -24,12 +41,18 @@ export default function CiclesId({ params }: { params: { id: string } }) {
     Number(selectedCicle?.totalValue) * price
   ).toLocaleString("pt-BR");
 
+  if (!selectedCicle) return <LoadingScreen />;
+
   return (
     <div className="flex items-center flex-col bg-white pb-20">
       <CiclosViewPerfil />
       <div className="flex flex-col relative w-full px-4 lg:px-[10%] mt-[12rem] lg:mt-[20px] pb-[20px]">
         <div className="border-b-[1px] border-[#252525] hidden lg:block border-opacity-25 w-full my-4" />
-        <ProgressBar curValue={totalValue} curValueBRL={totalValueBRL} />
+        <ProgressBar
+          status={selectedCicle.percentage}
+          curValue={totalValue}
+          curValueBRL={totalValueBRL}
+        />
         <div className="border-b-[1px] border-[#252525] border-opacity-25 w-full my-4" />
         <a
           href={`/auction/${selectedCicle?.id}`}
@@ -40,9 +63,9 @@ export default function CiclesId({ params }: { params: { id: string } }) {
         <div className="border-b-[1px] border-[#252525] lg:hidden block border-opacity-25 w-full my-4" />
         <SearchBar />
         <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-5 w-full">
-          {/* {cicles.map((item, index) => {
+          {NFTs.map((item, index) => {
             return <NFTCard key={index} item={item} />;
-          })} */}
+          })}
         </div>
       </div>
     </div>

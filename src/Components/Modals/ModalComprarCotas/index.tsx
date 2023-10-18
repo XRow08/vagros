@@ -20,6 +20,10 @@ export default function ModalComprarCotas() {
     "pt-BR"
   );
 
+  const valueFinal = (Number(amount) * Number(priceCicle)).toLocaleString(
+    "pt-BR"
+  );
+
   useEffect(() => {
     setPriceCicle(selectedCicle?.curValue!);
   }, []);
@@ -59,8 +63,7 @@ export default function ModalComprarCotas() {
           </label>
           <div className="flex flex-col items-start">
             <h1 className="flex text-base items-center gap-1">
-              USDT:{" "}
-              {(Number(amount) * Number(priceCicle)).toLocaleString("pt-BR")}
+              USDT: {valueFinal}
             </h1>
             <h1 className="flex text-sm items-center gap-1">
               BRL: {priceReal.toLocaleString("pt-BR")}
@@ -69,7 +72,10 @@ export default function ModalComprarCotas() {
           <TLogoIcon size="w-[40px]" />
         </div>
       </div>
-      <div className="h-14 w-1/2" onClick={() => onBuyCicle(tokenId!, amount)}>
+      <div
+        className="h-14 w-1/2"
+        onClick={() => onBuyCicle(tokenId!, amount, valueFinal)}
+      >
         <BtnRoxo>{!isLoading ? "FORNECER USDT" : "CARREGANDO..."}</BtnRoxo>
       </div>
     </div>

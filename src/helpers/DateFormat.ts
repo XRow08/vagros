@@ -20,10 +20,10 @@ function timestampToDate(timestamp: number) {
   const days = Math.floor(timestamp / (1000 * 60 * 60 * 24));
 
   return {
-    days,
-    hours,
-    min,
-    sec,
+    days: days >= 0 ? days : 0,
+    hours: hours >= 0 ? hours : 0,
+    min: min >= 0 ? min : 0,
+    sec: sec >= 0 ? sec : 0,
   };
 }
 

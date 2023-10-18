@@ -6,16 +6,13 @@ export default function FormInfoPessoal() {
   return (
     <div className="flex flex-col items-center p-4 w-[400px] h-[450px] bg-[#212121] rounded-lg shadow-lg ">
       <div className="flex flex-col justify-between items-center w-full h-full">
-
         <div className="flex flex-col items-center relative w-[90%] mt-[10px]">
-          
-            <h1 className="text-white font-Archivo text-25 font-semibold leading-normal tracking-wide">
-              INFORMAÇÕES PESSOAIS
-            </h1>
-            <div className="absolute right-0 top-2">
-              <Xwhite></Xwhite>
-            </div>
-          
+          <h1 className="text-white font-Archivo text-25 font-semibold leading-normal tracking-wide">
+            INFORMAÇÕES PESSOAIS
+          </h1>
+          <div className="absolute right-0 top-2">
+            <Xwhite></Xwhite>
+          </div>
         </div>
 
         <div className="flex flex-col gap-6 w-[90%] ">
@@ -46,10 +43,9 @@ export default function FormInfoPessoal() {
           />
         </div>
 
-        <div className="w-[65%] h-[50px]"> 
-            <BtnRoxo>CONTINUAR</BtnRoxo>
+        <div className="w-[65%] h-[50px]">
+          <BtnRoxo>CONTINUAR</BtnRoxo>
         </div>
-        
       </div>
     </div>
   );

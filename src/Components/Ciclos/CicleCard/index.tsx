@@ -5,23 +5,16 @@ import Relogio from "../../Icons/Relogio";
 import InterrogacaoIcon from "../../Icons/InterrogacaoIcon";
 import type { ICiclo } from "@/interfaces/ICiclo";
 import BtnAmarelo from "../../BtnAmarelo";
-import { DateFormat } from "@/helpers/DateFormat";
 import { useGetUSDT } from "@/hooks/useGetUSDT";
-import { useCountDown } from "@/hooks/useCountDown";
 
 export default function CicleCard({ item }: { item: ICiclo }) {
   const { price } = useGetUSDT();
-  const { isoToTimestamp, secToDays } = DateFormat;
-  const timestamp = isoToTimestamp(item.closingDate);
-  const timer = useCountDown(timestamp);
   const minValue = Number(item.minValue).toLocaleString("pt-BR");
   const minValueBRL = (Number(item.minValue) * price).toLocaleString("pt-BR");
   const totalValue = Number(item.totalValue).toLocaleString("pt-BR");
   const totalValueBRL = (Number(item.totalValue) * price).toLocaleString(
     "pt-BR"
   );
-  const date = secToDays(timer!).toFixed();
-  console.log(item);
   return (
     <div className="flex flex-col justify-between rounded-xl overflow-hidden shadow-2xl w-full bg-white text-black transition-all duration-300 ease-in-out hover:-translate-y-2">
       <img
@@ -52,7 +45,7 @@ export default function CicleCard({ item }: { item: ICiclo }) {
               </div>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                {item.stakeBeef} APY
+                {item.stakeBeef}% APY
               </h2>
             </div>
           </div>

@@ -2,6 +2,7 @@
 import AboutProject from "@/Components/AboutProject";
 import CiclosViewInfoSection from "@/Components/Ciclos/CiclosViewInfoSection";
 import DetalhesVaca from "@/Components/Ciclos/DetalhesVaca";
+import LoadingScreen from "@/Components/LoadingScreen";
 import { StorageHelper } from "@/helpers";
 import { ICiclo } from "@/interfaces";
 import { useCicleStore } from "@/stores/cicleStore";
@@ -16,14 +17,15 @@ export default function Auction({ params }: { params: { id: string } }) {
     setSelectedCicle(cicle!);
   }, [params]);
 
+  if (!selectedCicle) return <LoadingScreen />;
+
   return (
     <div className="flex flex-col w-full pt-[10rem] bg-white px-[10%]">
       <div className="flex w-full gap-10">
-        <DetalhesVaca />
-        <CiclosViewInfoSection item={selectedCicle!} />
+        <DetalhesVaca cicle={selectedCicle} />
+        <CiclosViewInfoSection item={selectedCicle} />
       </div>
-
-      <AboutProject video={selectedCicle?.video!} />
+      <AboutProject video={selectedCicle.video} />
     </div>
   );
 }

@@ -10,9 +10,10 @@ export function useContractUSDT() {
   const signer = getEthersSigner();
   const contract = Vagros_fakeUSDT__factory.connect(fakeUsdt_address, signer!);
 
-  async function onApprove(amount: string) {
+  async function onApprove(price: string) {
     setIsLoading(true);
-    const amountEther = ethers.utils.parseEther("100000");
+    const newPrice = price.split(",")[0];
+    const amountEther = ethers.utils.parseEther(newPrice);
     console.log(amountEther);
     try {
       const gasLimit = await calculateGasLimit(contract, "approve", [

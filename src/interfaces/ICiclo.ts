@@ -4,14 +4,19 @@ export interface ICiclo {
   description: string;
   thumbnail: string;
   video: string;
-  chainId?: string;
-  tokenSupply: string;
+  chainId?: number;
+  tokenSupply: number;
   contractAddress: string;
   blockchainNetwork: string;
   creatorAddress: string;
-  tokenId: string;
-  minValue: string;
-  curValue: string;
-  totalValue: string;
+  tokenId: number;
+  cycleId: number;
+  minValue: number;
+  curValue: number;
+  totalValue: number;
   closingDate: string;
+  targetProduct: number;
+  quantity: number;
+  percentage: number;
+  modality: string;
 }

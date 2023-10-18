@@ -14,23 +14,19 @@ export function useContractMarketplace() {
   );
   const { onApprove } = useContractUSDT();
 
-  async function onBuyCicle(cicleId: string, amount: string) {
+  async function onBuyCicle(cicleId: number, amount: string, price: string) {
     setIsLoading(true);
     try {
       toast.loading("Carregando a compra, aguarde um minuto!", {
         duration: 2000,
       });
       const gasLimit = await calculateGasLimit(contract, "buyCycle", [
-        Number(cicleId),
+        cicleId,
         Number(amount),
       ]);
       const gas = { gasLimit };
-      await onApprove(amount);
-      const transaction = await contract.buyCycle(
-        Number(cicleId),
-        Number(amount),
-        gas
-      );
+      await onApprove(price);
+      const transaction = await contract.buyCycle(cicleId, Number(amount), gas);
       console.log("transaction: ", transaction);
       const tx = await transaction.wait();
       console.log("tx: ", tx);

@@ -15,7 +15,7 @@ export default function AboutProject({ video }: { video: string }) {
   );
 
   return (
-    <div className="flex flex-col items-center text-black pt-[10rem] w-full">
+    <div className="flex flex-col items-center text-black pt-[5rem] w-full">
       <div className="flex flex-col w-full gap-5">
         <h1 className="text-black font-Archivo text-2xl font-bold leading-normal tracking-wider">
           Sobre o projeto

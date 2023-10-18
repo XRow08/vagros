@@ -14,18 +14,16 @@ import { DateInfo } from "./DateInfo";
 export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
   const { setShowModalComprarCotas } = useModalStore();
   const { price } = useGetUSDT();
-  const totalValue = Number(item?.totalValue).toLocaleString("pt-BR");
-  const totalValueBRL = (Number(item?.totalValue) * price).toLocaleString(
-    "pt-BR"
-  );
-  const minValue = Number(item?.minValue).toLocaleString("pt-BR");
-  const minValueBRL = (Number(item?.minValue) * price).toLocaleString("pt-BR");
+  const totalValue = item.totalValue.toLocaleString("pt-BR");
+  const totalValueBRL = (item.totalValue * price).toLocaleString("pt-BR");
+  const minValue = item.minValue.toLocaleString("pt-BR");
+  const minValueBRL = (item.minValue * price).toLocaleString("pt-BR");
 
   return (
     <div className="flex flex-col w-full h-[480px] bg-white rounded-lg p-5  shadow-lg">
       <div className="flex flex-col gap-4 w-full h-full">
         <h1 className="text-black font-Archivo text-2xl font-bold leading-normal tracking-wider">
-          {item?.description}
+          {item.description}
         </h1>
 
         <div className="flex gap-20">
@@ -44,7 +42,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  {item?.stakeBeef} APY
+                  {item.stakeBeef}% APY
                 </h2>
               </div>
             </div>
@@ -62,7 +60,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  {20} @
+                  {item.targetProduct} @
                 </h2>
               </div>
             </div>
@@ -137,7 +135,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  Arroba produzida
+                  {item.modality}
                 </h2>
               </div>
             </div>
@@ -156,18 +154,21 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
                 </div>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
-                  {20} @
+                  {item.quantity} @
                 </h2>
               </div>
             </div>
           </div>
         </div>
 
-        <ProgressBar curValue={totalValue} curValueBRL={totalValueBRL} />
+        <ProgressBar
+          status={item.percentage}
+          curValue={totalValue}
+          curValueBRL={totalValueBRL}
+        />
 
         <div className="flex items-center justify-between">
-          <DateInfo date={item?.closingDate} />
-
+          <DateInfo date={item.closingDate} />
           <div
             onClick={() => setShowModalComprarCotas(true)}
             className="flex w-[40%] h-[50px]"
