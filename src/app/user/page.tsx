@@ -1,5 +1,4 @@
 "use client";
-import NFTCard from "@/Components/NFTCard";
 import Card3Withdraw from "@/Components/Card3Withdraw";
 const Chart = dynamic(() =>
   import("@/Components/Chart").then((mod) => mod.Chart)
@@ -8,16 +7,32 @@ import BolaQuadrado from "@/Components/Icons/BolaQuadrado";
 import CircleYang from "@/Components/Icons/CircleYang";
 import BtnPerfil from "@/Components/PerfilUsuario/BtnPerfil";
 import { useModalStore } from "@/stores";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
+import { StorageHelper } from "@/helpers";
+import { ICiclo } from "@/interfaces";
+import { useCicleStore } from "@/stores/cicleStore";
+import CicleCard from "@/Components/Ciclos/CicleCard";
 
 export default function Usuario() {
   const [activeCycles, setActiveCycles] = useState(true);
   const [activeDashboard, setActiveDashboard] = useState(false);
   const [enterCycles, setEnterCycles] = useState(false);
   const [enterDashboard, setEnterDashboard] = useState(false);
-
   const { setShowModalEditarPerfil } = useModalStore();
+  const { setCicles, cicles } = useCicleStore();
+
+  useEffect(() => {
+    async function getAlls() {
+      try {
+        const cicles: ICiclo[] = StorageHelper.getItem("cicles");
+        setCicles(cicles!);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    getAlls();
+  }, []);
 
   const nome = "Alice Alves";
 
@@ -27,48 +42,6 @@ export default function Usuario() {
     stake: "100.000,00",
     totalRetirada: "25.000,00",
   };
-
-  const data = [
-    {
-      id: "1",
-      nftName: "Nelore#2540",
-      priceUsdt: "20",
-      priceBrl: "100",
-      address: "cro41.....9012",
-      date: {
-        days: "3",
-        hours: "5",
-        mins: "20",
-        segs: "53",
-      },
-    },
-    {
-      id: "2",
-      nftName: "Nelore#2540",
-      priceUsdt: "20",
-      priceBrl: "100",
-      address: "cro41.....9012",
-      date: {
-        days: "3",
-        hours: "5",
-        mins: "20",
-        segs: "53",
-      },
-    },
-    {
-      id: "3",
-      nftName: "Nelore#2540",
-      priceUsdt: "20",
-      priceBrl: "100",
-      address: "cro41.....9012",
-      date: {
-        days: "3",
-        hours: "5",
-        mins: "20",
-        segs: "53",
-      },
-    },
-  ];
 
   return (
     <div className="flex items-center flex-col bg-white w-full min-h-screen">
@@ -175,8 +148,8 @@ export default function Usuario() {
             <Card3Withdraw />
             <Card3Withdraw />
             <Card3Withdraw />
-            {data.map((item, index) => {
-              return <NFTCard key={index} item={item} />;
+            {cicles.map((item, index) => {
+              return <CicleCard key={index} item={item} />;
             })}
           </div>
         ) : (
