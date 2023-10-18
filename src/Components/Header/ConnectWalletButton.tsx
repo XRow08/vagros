@@ -13,7 +13,7 @@ export default function ConnectWalletButton() {
     <button
       onClick={() => setShowModalWallet(true)}
       disabled={!!address}
-      className="w-[237px] h-[51px] bg-gradient-to-r from-yellow-300 to-orange-500 text-black font-bold text-16 rounded-[8px] "
+      className="w-[237px] h-[50px] bg-gradient-to-r active:scale-95 transition-all duration-300 ease-in-out hover:opacity-80 from-yellow-300 to-orange-500 text-black font-bold text-16 rounded-[8px] "
     >
       {address ? result : "CONECTAR CARTEIRA"}
     </button>

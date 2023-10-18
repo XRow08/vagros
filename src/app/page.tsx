@@ -2,6 +2,7 @@
 import Banner from "@/Components/Banner";
 import HomeFirstSection from "@/Components/HomeFirstSection";
 import HomeSecondSection from "@/Components/HomeSecondSection";
+import LoadingScreen from "@/Components/LoadingScreen";
 import { StorageHelper } from "@/helpers";
 import { CiclesService } from "@/services";
 import { useCicleStore } from "@/stores/cicleStore";
@@ -24,6 +25,8 @@ export default function Home() {
     }
     onFunc();
   }, []);
+
+  if (!cicles || cicles.length === 0) return <LoadingScreen />;
 
   return (
     <>
