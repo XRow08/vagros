@@ -19,8 +19,7 @@ export default function ModalComprarCotas() {
   const minValueBRL = (Number(selectedCicle?.minValue) * price).toLocaleString(
     "pt-BR"
   );
-
-  const valueFinal = (Number(amount) * Number(priceCicle)).toLocaleString(
+  const valueFinal = (Number(amount) * Number(priceCicle) + 1).toLocaleString(
     "pt-BR"
   );
 

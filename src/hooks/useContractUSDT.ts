@@ -14,7 +14,6 @@ export function useContractUSDT() {
     setIsLoading(true);
     const newPrice = price.split(",")[0];
     const amountEther = ethers.utils.parseEther(newPrice);
-    console.log(amountEther);
     try {
       const gasLimit = await calculateGasLimit(contract, "approve", [
         marketplace_address,

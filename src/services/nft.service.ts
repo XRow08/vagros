@@ -4,7 +4,7 @@ import { createApolloClient } from "./index";
 import { gql } from "@apollo/client";
 
 export const NFTService = {
-  async getAllNFT() {
+  async getAllNFT(): Promise<INFT[]> {
     const client = createApolloClient();
     const { data } = await client.query({
       query: gql`

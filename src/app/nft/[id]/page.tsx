@@ -2,16 +2,15 @@
 import type { ICiclo, INFT } from "@/interfaces";
 import DetalhesVaca from "@/Components/Ciclos/DetalhesVaca";
 import NftData from "@/Components/NftData";
-/* const Chart = dynamic(() =>
+const Chart = dynamic(() =>
   import("@/Components/Chart").then((mod) => mod.Chart)
-); */
-import dynamic from "next/dynamic";
+);
 import { StorageHelper } from "@/helpers";
 import { useCicleStore } from "@/stores/cicleStore";
 import { useNFTStore } from "@/stores/nftStore";
 import { useEffect } from "react";
 import LoadingScreen from "@/Components/LoadingScreen";
-import { Chart } from "@/Components/Chart";
+import dynamic from "next/dynamic";
 
 export default function NftView({ params }: { params: { id: string } }) {
   const { selectedCicle, setSelectedCicle } = useCicleStore();

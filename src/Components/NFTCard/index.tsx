@@ -6,10 +6,16 @@ import { BrasilIcon } from "../Icons/BrasilIcon";
 import { DateRemain } from "./DateRemain";
 import { useCicleStore } from "@/stores/cicleStore";
 import { AddressUtils } from "@/helpers/AddressUtils";
+import { useGetUSDT } from "@/hooks/useGetUSDT";
 
 export default function NFTCard({ item }: { item: INFT }) {
   const { selectedCicle } = useCicleStore();
+  const { price } = useGetUSDT();
   const address = AddressUtils.hideAddress(item.owner);
+  const totalValue = Number(item.totalAmount).toLocaleString("pt-BR");
+  const totalValueBRL = (Number(item.totalAmount) * price).toLocaleString(
+    "pt-BR"
+  );
   return (
     <a
       href={`/nft/${item.tokenId}`}
@@ -24,7 +30,7 @@ export default function NFTCard({ item }: { item: INFT }) {
           />
 
           <img
-            src="/images/vaquinha2.png"
+            src={selectedCicle?.thumbnail}
             className="h-full w-full cover rounded-t-lg"
             alt="vaquinha2"
           />
@@ -46,7 +52,7 @@ export default function NFTCard({ item }: { item: INFT }) {
               <TLogoIcon />
             </h1>
             <h2 className="text-black text-16 font-normal leading-normal tracking-wider">
-              $ {item.totalAmount.toLocaleString("pt-BR")}
+              $ {totalValue}
             </h2>
           </div>
 
@@ -56,7 +62,7 @@ export default function NFTCard({ item }: { item: INFT }) {
               <BrasilIcon />
             </h1>
             <h2 className="text-black text-16 font-normal leading-normal tracking-wider">
-              R$ {item.totalAmount.toLocaleString("pt-BR")}
+              R$ {totalValueBRL}
             </h2>
           </div>
         </div>

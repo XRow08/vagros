@@ -5,8 +5,8 @@ import { useGetUSDT } from "@/hooks/useGetUSDT";
 export default function CiclosViewInfo() {
   const { selectedCicle: item } = useCicleStore();
   const { price } = useGetUSDT();
-  const minValue = Number(item?.minValue).toLocaleString("pt-BR");
-  const minValueBRL = (Number(item?.minValue) * price).toLocaleString("pt-BR");
+  const curValue = Number(item?.curValue).toLocaleString("pt-BR");
+  const curValueBRL = (Number(item?.curValue) * price).toLocaleString("pt-BR");
 
   const data = [
     {
@@ -19,11 +19,11 @@ export default function CiclosViewInfo() {
     },
     {
       title: "USDT",
-      value: `${minValue} /`,
+      value: `${curValue} /`,
     },
     {
       title: "BRL",
-      value: minValueBRL,
+      value: curValueBRL,
     },
     {
       title: "Prazo",

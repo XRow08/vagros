@@ -25,10 +25,11 @@ export default function CiclesId({ params }: { params: { id: string } }) {
         const cicle = cicles.find((e) => e.id === params.id);
         setSelectedCicle(cicle!);
         const nftAll = StorageHelper.getItem("nfts");
-        if (nftAll) return setNFTs(nftAll);
+        if (nftAll) setNFTs(nftAll);
         const nfts = await NFTService.getAllNFT();
         StorageHelper.setItem("nfts", nfts);
-        setNFTs(nfts);
+        const nftsByCycle = nfts.filter((e) => e.cycleId === cicle?.cycleId);
+        setNFTs(nftsByCycle);
       } catch (error) {
         console.log(error);
       }
