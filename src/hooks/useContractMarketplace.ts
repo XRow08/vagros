@@ -14,7 +14,7 @@ export function useContractMarketplace() {
   );
   const { onApprove } = useContractUSDT();
 
-  async function onBuyCicle(cicleId: number, amount: string, price: string) {
+  async function onBuyCicle(cicleId: number, amount: string) {
     setIsLoading(true);
     try {
       toast.loading("Carregando a compra, aguarde um minuto!", {
@@ -25,7 +25,7 @@ export function useContractMarketplace() {
         Number(amount),
       ]);
       const gas = { gasLimit };
-      await onApprove(price);
+      await onApprove("99999999999");
       const transaction = await contract.buyCycle(cicleId, Number(amount), gas);
       console.log("transaction: ", transaction);
       const tx = await transaction.wait();

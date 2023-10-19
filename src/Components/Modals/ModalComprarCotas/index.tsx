@@ -19,7 +19,7 @@ export default function ModalComprarCotas() {
   const minValueBRL = (Number(selectedCicle?.minValue) * price).toLocaleString(
     "pt-BR"
   );
-  const valueFinal = (Number(amount) * Number(priceCicle) + 1).toLocaleString(
+  const valueFinal = (Number(amount) * Number(priceCicle)).toLocaleString(
     "pt-BR"
   );
 
@@ -71,10 +71,7 @@ export default function ModalComprarCotas() {
           <TLogoIcon size="w-[40px]" />
         </div>
       </div>
-      <div
-        className="h-14 w-1/2"
-        onClick={() => onBuyCicle(tokenId!, amount, valueFinal)}
-      >
+      <div className="h-14 w-1/2" onClick={() => onBuyCicle(tokenId!, amount)}>
         <BtnRoxo>{!isLoading ? "FORNECER USDT" : "CARREGANDO..."}</BtnRoxo>
       </div>
     </div>
