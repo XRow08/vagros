@@ -15,7 +15,7 @@ export default function Home() {
     async function onFunc() {
       try {
         const cicles = StorageHelper.getItem("cicles");
-        if (cicles) return setCicles(cicles);
+        if (cicles) setCicles(cicles);
         const data = await CiclesService.getAllCicles();
         StorageHelper.setItem("cicles", data);
         setCicles(data);
