@@ -22,14 +22,14 @@ export default function CiclesId({ params }: { params: { id: string } }) {
     async function getAlls() {
       try {
         const cicles: ICiclo[] = StorageHelper.getItem("cicles");
-        const cicle = cicles.find((e) => e.id === params.id);
+        const cicle = cicles.find((e) => e.cycleId === Number(params.id));
         setSelectedCicle(cicle!);
         const nftAll = StorageHelper.getItem("nfts");
         if (nftAll) setNFTs(nftAll);
         const nfts = await NFTService.getAllNFT();
-        const nftsByCycle = nfts.filter((e) => e.cycleId === cicle?.cycleId);
-        StorageHelper.setItem("nfts", nftsByCycle);
-        setNFTs(nftsByCycle);
+        const cyclesNFT = nfts.filter((e) => e.cycleId === Number(params.id));
+        StorageHelper.setItem("nfts", cyclesNFT);
+        setNFTs(cyclesNFT);
       } catch (error) {
         console.log(error);
       }

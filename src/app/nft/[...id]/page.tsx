@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import LoadingScreen from "@/Components/LoadingScreen";
 import dynamic from "next/dynamic";
 
-export default function NftView({ params }: { params: { id: string } }) {
+export default function NftView({ params }: { params: { id: string[] } }) {
   const { selectedCicle, setSelectedCicle } = useCicleStore();
   const { selectedNFT, setSelectedNFT } = useNFTStore();
 
@@ -21,8 +21,8 @@ export default function NftView({ params }: { params: { id: string } }) {
       try {
         const nftAll: INFT[] = await StorageHelper.getItem("nfts");
         const ciclesAll: ICiclo[] = await StorageHelper.getItem("cicles");
-        const nft = nftAll.find((e) => e.owner === params.id);
-        const cicle = ciclesAll.find((e) => e.cycleId === nft?.cycleId);
+        const nft = nftAll.find((e) => e.owner === params.id[1]);
+        const cicle = ciclesAll.find((e) => e.cycleId === Number(params.id[0]));
         setSelectedCicle(cicle!);
         setSelectedNFT(nft!);
       } catch (error) {

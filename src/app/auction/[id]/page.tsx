@@ -13,7 +13,7 @@ export default function Auction({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     const cicles: ICiclo[] = StorageHelper.getItem("cicles");
-    const cicle = cicles.find((e) => e.id === params.id);
+    const cicle = cicles.find((e) => e.cycleId === Number(params.id));
     setSelectedCicle(cicle!);
   }, [params]);
 

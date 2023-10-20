@@ -18,8 +18,10 @@ export default function NftData({
 }) {
   const { setShowModalRetirarGanhos } = useModalStore();
   const { price } = useGetUSDT();
-  const totalValue = item.totalAmount.toLocaleString("pt-BR");
-  const totalValueBRL = (item.totalAmount * price).toLocaleString("pt-BR");
+  const { totalAmount } = item;
+  const totalAmountBRL = (totalAmount * price).toFixed();
+  const totalValue = Number(totalAmount.toLocaleString("pt-BR")).toFixed(2);
+  const totalValueBRL = Number(totalAmountBRL).toLocaleString("pt-BR");
   const { isoToTimestamp } = DateFormat;
   const timestamp = isoToTimestamp(cicle.closingDate);
   const timer = useCountDown(timestamp);
@@ -58,7 +60,7 @@ export default function NftData({
             </div>
             <div className="flex items-center gap-2">
               <h1 className="text-black font-Archivo text-md font-normal tracking-wide leading-normal letter-spacing-1">
-                (BRL: R$ {totalValueBRL})
+                BRL: R$ {totalValueBRL}
               </h1>
               <img src="/images/brl.png" alt="" />
             </div>

@@ -24,7 +24,7 @@ export default function NFTCard({
   );
   return (
     <a
-      href={`/nft/${item.owner}`}
+      href={`/nft/${selectedCicle?.cycleId}/${item.owner}`}
       className="flex flex-col bg-white w-full rounded-lg overflow-hidden h-full shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 cursor-pointer"
     >
       <div className="flex flex-col text-black w-full shadow-2x">
