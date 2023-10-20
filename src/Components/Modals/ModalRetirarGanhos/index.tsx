@@ -1,15 +1,22 @@
 "use client";
+import { useContractMarketplace } from "@/hooks/useContractMarketplace";
 import BtnRoxo from "../../BtnRoxo";
 import X from "../../Icons/X";
 import { useModalStore } from "@/stores";
+import { useNFTStore } from "@/stores/nftStore";
+import { useGetUSDT } from "@/hooks/useGetUSDT";
 
 export default function ModalRetirarGanhos() {
-  const data = {
-    usdtPrice: "477.00",
-    brlPrice: "100.00",
-  };
-
   const { setShowModalRetirarGanhos } = useModalStore();
+  const { selectedNFT } = useNFTStore();
+  const { price } = useGetUSDT();
+  const { onRequestReward, isLoading } = useContractMarketplace();
+  const { totalAmount } = selectedNFT!;
+  const totalAmountBRL = (totalAmount * price).toFixed();
+  const totalValue = Number(totalAmount.toLocaleString("pt-BR")).toFixed(2);
+  const totalValueBRL = Number(totalAmountBRL).toLocaleString("pt-BR");
+
+  if (!selectedNFT) return <></>;
 
   return (
     <div className="flex flex-col items-center w-full h-full ">
@@ -28,21 +35,28 @@ export default function ModalRetirarGanhos() {
           <div className="flex items-center gap-4 border-y-[1px] border-gray-300 py-8">
             <div className="flex items-center gap-2">
               <h1 className="text-black font-Archivo text-2xl font-bold tracking-wide leading-normal letter-spacing-1.75">
-                USDT: $ {data.usdtPrice}
+                USDT: $ {totalValue}
               </h1>
               <img src="/images/usdt.png" alt="" />
             </div>
 
             <div className="flex items-center gap-2">
               <h1 className="text-black font-Archivo text-md font-normal tracking-wide leading-normal letter-spacing-1">
-                (BRL: R$ {data.brlPrice})
+                BRL: R$ {totalValueBRL}
               </h1>
               <img src="/images/brl.png" alt="" />
             </div>
           </div>
 
-          <div className="flex w-[50%] h-[50px] my-2 cursor-pointer">
-            <BtnRoxo>RETIRAR FUNDOS</BtnRoxo>
+          <div className="w-full flex items-center justify-center">
+            <div
+              onClick={() => onRequestReward(selectedNFT?.cycleId)}
+              className="flex w-[50%] h-[50px] my-2 cursor-pointer"
+            >
+              <BtnRoxo>
+                {!isLoading ? "RETIRAR FUNDOS" : "CARREGANDO..."}
+              </BtnRoxo>
+            </div>
           </div>
         </div>
       </div>

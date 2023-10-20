@@ -56,6 +56,8 @@ export interface Vagros_marketplaceInterface extends utils.Interface {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
     "buyCycle(uint256,uint256)": FunctionFragment;
     "createCycle(uint256,uint256,address,uint256)": FunctionFragment;
+    "cycleRewardClaimed(uint256,address)": FunctionFragment;
+    "cycleRewards(uint256)": FunctionFragment;
     "getCycle(uint256)": FunctionFragment;
     "getCycles()": FunctionFragment;
     "getRoleAdmin(bytes32)": FunctionFragment;
@@ -70,7 +72,9 @@ export interface Vagros_marketplaceInterface extends utils.Interface {
     "paused()": FunctionFragment;
     "renounceRole(bytes32,address)": FunctionFragment;
     "requestReimbursement(uint256)": FunctionFragment;
+    "requestReward(uint256)": FunctionFragment;
     "revokeRole(bytes32,address)": FunctionFragment;
+    "setCycleReward(uint256,uint256,uint256)": FunctionFragment;
     "setSupportedPaymentToken(address,bool)": FunctionFragment;
     "setVagrosAllowlist(address)": FunctionFragment;
     "setVagrosCycleToken(address)": FunctionFragment;
@@ -84,6 +88,8 @@ export interface Vagros_marketplaceInterface extends utils.Interface {
       | "DEFAULT_ADMIN_ROLE"
       | "buyCycle"
       | "createCycle"
+      | "cycleRewardClaimed"
+      | "cycleRewards"
       | "getCycle"
       | "getCycles"
       | "getRoleAdmin"
@@ -98,7 +104,9 @@ export interface Vagros_marketplaceInterface extends utils.Interface {
       | "paused"
       | "renounceRole"
       | "requestReimbursement"
+      | "requestReward"
       | "revokeRole"
+      | "setCycleReward"
       | "setSupportedPaymentToken"
       | "setVagrosAllowlist"
       | "setVagrosCycleToken"
@@ -121,6 +129,14 @@ export interface Vagros_marketplaceInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "createCycle",
     values: [BigNumberish, BigNumberish, string, BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "cycleRewardClaimed",
+    values: [BigNumberish, string]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "cycleRewards",
+    values: [BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "getCycle",
@@ -167,8 +183,16 @@ export interface Vagros_marketplaceInterface extends utils.Interface {
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
+    functionFragment: "requestReward",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "revokeRole",
     values: [BytesLike, string]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "setCycleReward",
+    values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
     functionFragment: "setSupportedPaymentToken",
@@ -196,6 +220,14 @@ export interface Vagros_marketplaceInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "buyCycle", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "createCycle",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "cycleRewardClaimed",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "cycleRewards",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "getCycle", data: BytesLike): Result;
@@ -233,7 +265,15 @@ export interface Vagros_marketplaceInterface extends utils.Interface {
     functionFragment: "requestReimbursement",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "requestReward",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(functionFragment: "revokeRole", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "setCycleReward",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "setSupportedPaymentToken",
     data: BytesLike
@@ -427,6 +467,19 @@ export interface Vagros_marketplace extends BaseContract {
       overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
 
+    cycleRewardClaimed(
+      arg0: BigNumberish,
+      arg1: string,
+      overrides?: CallOverrides
+    ): Promise<[boolean]>;
+
+    cycleRewards(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<
+      [BigNumber, BigNumber] & { amount: BigNumber; releaseDate: BigNumber }
+    >;
+
     getCycle(
       _cycleId: BigNumberish,
       overrides?: CallOverrides
@@ -500,9 +553,21 @@ export interface Vagros_marketplace extends BaseContract {
       overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
 
+    requestReward(
+      _cycleId: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<ContractTransaction>;
+
     revokeRole(
       role: BytesLike,
       account: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<ContractTransaction>;
+
+    setCycleReward(
+      _cycleId: BigNumberish,
+      _rewardAmount: BigNumberish,
+      _releaseDate: BigNumberish,
       overrides?: Overrides & { from?: string }
     ): Promise<ContractTransaction>;
 
@@ -560,6 +625,19 @@ export interface Vagros_marketplace extends BaseContract {
     _expiration: BigNumberish,
     overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
+
+  cycleRewardClaimed(
+    arg0: BigNumberish,
+    arg1: string,
+    overrides?: CallOverrides
+  ): Promise<boolean>;
+
+  cycleRewards(
+    arg0: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<
+    [BigNumber, BigNumber] & { amount: BigNumber; releaseDate: BigNumber }
+  >;
 
   getCycle(
     _cycleId: BigNumberish,
@@ -631,9 +709,21 @@ export interface Vagros_marketplace extends BaseContract {
     overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
 
+  requestReward(
+    _cycleId: BigNumberish,
+    overrides?: Overrides & { from?: string }
+  ): Promise<ContractTransaction>;
+
   revokeRole(
     role: BytesLike,
     account: string,
+    overrides?: Overrides & { from?: string }
+  ): Promise<ContractTransaction>;
+
+  setCycleReward(
+    _cycleId: BigNumberish,
+    _rewardAmount: BigNumberish,
+    _releaseDate: BigNumberish,
     overrides?: Overrides & { from?: string }
   ): Promise<ContractTransaction>;
 
@@ -691,6 +781,19 @@ export interface Vagros_marketplace extends BaseContract {
       _expiration: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    cycleRewardClaimed(
+      arg0: BigNumberish,
+      arg1: string,
+      overrides?: CallOverrides
+    ): Promise<boolean>;
+
+    cycleRewards(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<
+      [BigNumber, BigNumber] & { amount: BigNumber; releaseDate: BigNumber }
+    >;
 
     getCycle(
       _cycleId: BigNumberish,
@@ -760,9 +863,21 @@ export interface Vagros_marketplace extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
+    requestReward(
+      _cycleId: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     revokeRole(
       role: BytesLike,
       account: string,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    setCycleReward(
+      _cycleId: BigNumberish,
+      _rewardAmount: BigNumberish,
+      _releaseDate: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -884,6 +999,17 @@ export interface Vagros_marketplace extends BaseContract {
       overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
 
+    cycleRewardClaimed(
+      arg0: BigNumberish,
+      arg1: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    cycleRewards(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     getCycle(
       _cycleId: BigNumberish,
       overrides?: CallOverrides
@@ -956,9 +1082,21 @@ export interface Vagros_marketplace extends BaseContract {
       overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
 
+    requestReward(
+      _cycleId: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<BigNumber>;
+
     revokeRole(
       role: BytesLike,
       account: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<BigNumber>;
+
+    setCycleReward(
+      _cycleId: BigNumberish,
+      _rewardAmount: BigNumberish,
+      _releaseDate: BigNumberish,
       overrides?: Overrides & { from?: string }
     ): Promise<BigNumber>;
 
@@ -1008,6 +1146,17 @@ export interface Vagros_marketplace extends BaseContract {
       _paymentToken: string,
       _expiration: BigNumberish,
       overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
+    cycleRewardClaimed(
+      arg0: BigNumberish,
+      arg1: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    cycleRewards(
+      arg0: BigNumberish,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     getCycle(
@@ -1084,9 +1233,21 @@ export interface Vagros_marketplace extends BaseContract {
       overrides?: Overrides & { from?: string }
     ): Promise<PopulatedTransaction>;
 
+    requestReward(
+      _cycleId: BigNumberish,
+      overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
     revokeRole(
       role: BytesLike,
       account: string,
+      overrides?: Overrides & { from?: string }
+    ): Promise<PopulatedTransaction>;
+
+    setCycleReward(
+      _cycleId: BigNumberish,
+      _rewardAmount: BigNumberish,
+      _releaseDate: BigNumberish,
       overrides?: Overrides & { from?: string }
     ): Promise<PopulatedTransaction>;
 

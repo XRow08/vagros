@@ -3,8 +3,6 @@ import Share from "../Icons/Share";
 import Star from "../Icons/Star";
 import { ICiclo, INFT } from "@/interfaces";
 import { useGetUSDT } from "@/hooks/useGetUSDT";
-import { DateFormat } from "@/helpers/DateFormat";
-import { useCountDown } from "@/hooks/useCountDown";
 import { DateInfo } from "./DateInfo";
 import BtnRoxo from "../BtnRoxo";
 import { useModalStore } from "@/stores";
@@ -22,9 +20,6 @@ export default function NftData({
   const totalAmountBRL = (totalAmount * price).toFixed();
   const totalValue = Number(totalAmount.toLocaleString("pt-BR")).toFixed(2);
   const totalValueBRL = Number(totalAmountBRL).toLocaleString("pt-BR");
-  const { isoToTimestamp } = DateFormat;
-  const timestamp = isoToTimestamp(cicle.closingDate);
-  const timer = useCountDown(timestamp);
 
   return (
     <div className="flex flex-col w-full border-2 bg-white rounded-lg p-4 py-8 shadow-2xl">
@@ -66,16 +61,16 @@ export default function NftData({
             </div>
           </div>
 
-          {timer! > 0 ? (
+          <div className="flex items-center w-full justify-between">
             <DateInfo date={cicle.closingDate} />
-          ) : (
+
             <div
               onClick={() => setShowModalRetirarGanhos(true)}
               className="w-[30%] h-[50px] mt-4 mb-2"
             >
               <BtnRoxo>RETIRAR FUNDOS</BtnRoxo>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>

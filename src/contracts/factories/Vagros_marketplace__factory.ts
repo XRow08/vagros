@@ -307,6 +307,54 @@ const _abi = [
     inputs: [
       {
         internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "cycleRewardClaimed",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "cycleRewards",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "amount",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "releaseDate",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
         name: "_cycleId",
         type: "uint256",
       },
@@ -633,6 +681,19 @@ const _abi = [
   {
     inputs: [
       {
+        internalType: "uint256",
+        name: "_cycleId",
+        type: "uint256",
+      },
+    ],
+    name: "requestReward",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "bytes32",
         name: "role",
         type: "bytes32",
@@ -644,6 +705,29 @@ const _abi = [
       },
     ],
     name: "revokeRole",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_cycleId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_rewardAmount",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_releaseDate",
+        type: "uint256",
+      },
+    ],
+    name: "setCycleReward",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
