@@ -24,7 +24,7 @@ export default function ModalComprarCotas() {
   );
 
   useEffect(() => {
-    setPriceCicle(selectedCicle?.curValue.toString()!);
+    setPriceCicle(selectedCicle?.minValue.toString()!);
   }, []);
 
   return (
