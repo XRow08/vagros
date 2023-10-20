@@ -76,7 +76,8 @@ export function Carroussel() {
           <video
             key={e}
             loop
-            controls
+            autoPlay
+            muted
             className="w-full h-[400px] rounded-lg object-cover object-center"
           >
             <source src={e} type="video/mp4" />

@@ -5,7 +5,7 @@ import { ICiclo, INFT } from "@/interfaces";
 import { useGetUSDT } from "@/hooks/useGetUSDT";
 import { DateFormat } from "@/helpers/DateFormat";
 import { useCountDown } from "@/hooks/useCountDown";
-import { DateInfo } from "../Ciclos/CiclosViewInfoSection/DateInfo";
+import { DateInfo } from "./DateInfo";
 import BtnRoxo from "../BtnRoxo";
 import { useModalStore } from "@/stores";
 
@@ -18,10 +18,8 @@ export default function NftData({
 }) {
   const { setShowModalRetirarGanhos } = useModalStore();
   const { price } = useGetUSDT();
-  const totalValue = Number(item.totalAmount).toLocaleString("pt-BR");
-  const totalValueBRL = (Number(item.totalAmount) * price).toLocaleString(
-    "pt-BR"
-  );
+  const totalValue = item.totalAmount.toLocaleString("pt-BR");
+  const totalValueBRL = (item.totalAmount * price).toLocaleString("pt-BR");
   const { isoToTimestamp } = DateFormat;
   const timestamp = isoToTimestamp(cicle.closingDate);
   const timer = useCountDown(timestamp);

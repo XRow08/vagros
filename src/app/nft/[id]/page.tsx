@@ -21,7 +21,7 @@ export default function NftView({ params }: { params: { id: string } }) {
       try {
         const nftAll: INFT[] = await StorageHelper.getItem("nfts");
         const ciclesAll: ICiclo[] = await StorageHelper.getItem("cicles");
-        const nft = nftAll.find((e) => e.tokenId === Number(params.id));
+        const nft = nftAll.find((e) => e.owner === params.id);
         const cicle = ciclesAll.find((e) => e.cycleId === nft?.cycleId);
         setSelectedCicle(cicle!);
         setSelectedNFT(nft!);

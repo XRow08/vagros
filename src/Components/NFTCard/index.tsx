@@ -8,7 +8,13 @@ import { useCicleStore } from "@/stores/cicleStore";
 import { AddressUtils } from "@/helpers/AddressUtils";
 import { useGetUSDT } from "@/hooks/useGetUSDT";
 
-export default function NFTCard({ item }: { item: INFT }) {
+export default function NFTCard({
+  item,
+  index,
+}: {
+  item: INFT;
+  index: number;
+}) {
   const { selectedCicle } = useCicleStore();
   const { price } = useGetUSDT();
   const address = AddressUtils.hideAddress(item.owner);
@@ -18,7 +24,7 @@ export default function NFTCard({ item }: { item: INFT }) {
   );
   return (
     <a
-      href={`/nft/${item.tokenId}`}
+      href={`/nft/${item.owner}`}
       className="flex flex-col bg-white w-full rounded-lg overflow-hidden h-full shadow-2xl transition-all duration-300 ease-in-out hover:-translate-y-2 cursor-pointer"
     >
       <div className="flex flex-col text-black w-full shadow-2x">
@@ -39,7 +45,7 @@ export default function NFTCard({ item }: { item: INFT }) {
 
         <div className="flex items-center justify-between py-1 mx-[5%] pt-2">
           <h1 className="text-black font-bold text-lg leading-normal tracking-wide">
-            {item.__typename}
+            Nelore #{index}
           </h1>
           <div>
             <Polygon />

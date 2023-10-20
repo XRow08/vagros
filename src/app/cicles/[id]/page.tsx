@@ -64,8 +64,8 @@ export default function CiclesId({ params }: { params: { id: string } }) {
         <div className="border-b-[1px] border-[#252525] lg:hidden block border-opacity-25 w-full my-4" />
         <SearchBar />
         <div className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-5 w-full">
-          {NFTs.map((item, index) => {
-            return <NFTCard key={index} item={item} />;
+          {NFTs.map((e, i) => {
+            return <NFTCard key={i} item={e} index={i} />;
           })}
         </div>
       </div>

@@ -12,7 +12,7 @@ export function DateRemain({ date }: { date?: string }) {
       <div className="flex items-center gap-2 justify-center px-10 py-1">
         <div className="flex flex-col items-center shadow-2xl shadow-black bg-black rounded-md w-[30%] bg-opacity-40 backdrop-blur-md">
           <h1 className="text-white text-base font-normal tracking-wider">
-            {days}
+            149
           </h1>
           <h2 className="text-white text-xs font-normal tracking-wider">
             dias
