@@ -61,7 +61,7 @@ export function Details({ item }: { item: ICiclo }) {
                 Token standard
               </h1>
               <h1 className="text-black font-Archivo text-lg font-bold leading-normal tracking-wider">
-                ERC721
+                ERC1155
               </h1>
             </div>
 
