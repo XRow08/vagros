@@ -20,7 +20,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
   const minValueBRL = (item.minValue * price).toLocaleString("pt-BR");
 
   return (
-    <div className="flex flex-col w-full h-[480px] bg-white rounded-lg p-5  shadow-lg">
+    <div className="flex flex-col w-full bg-white rounded-lg p-5  shadow-lg">
       <div className="flex flex-col gap-4 w-full h-full">
         <h1 className="text-black font-Archivo text-2xl font-bold leading-normal tracking-wider">
           {item.description}
@@ -34,12 +34,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
               </div>
 
               <div className="text-black">
-                <div className="flex items-center justify-between gap-2">
-                  <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                    Stake Beef
-                  </h1>
+                <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                  Stake Beef
                   <InterrogacaoIcon />
-                </div>
+                </h1>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                   {item.stakeBeef}% APY
@@ -52,12 +50,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
               </div>
 
               <div className="text-black">
-                <div className="flex items-center justify-between gap-2">
-                  <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                    Produção Alvo
-                  </h1>
+                <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                  Produção Alvo
                   <InterrogacaoIcon />
-                </div>
+                </h1>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                   {item.targetProduct} @
@@ -70,12 +66,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
               </div>
 
               <div className="text-black">
-                <div className="flex items-center justify-between gap-2">
-                  <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                    Valor do ciclo
-                  </h1>
+                <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                  Valor do ciclo
                   <InterrogacaoIcon />
-                </div>
+                </h1>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                   USDT {totalValue} / BRL {totalValueBRL}
@@ -88,12 +82,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
               </div>
 
               <div className="text-black">
-                <div className="flex items-center justify-between gap-2">
-                  <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                    Prazo
-                  </h1>
+                <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                  Prazo
                   <InterrogacaoIcon />
-                </div>
+                </h1>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                   150 Dias
@@ -109,12 +101,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
               </div>
 
               <div className="text-black">
-                <div className="flex items-center justify-between gap-2">
-                  <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                    Valor mínimo
-                  </h1>
+                <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                  Valor mínimo
                   <InterrogacaoIcon />
-                </div>
+                </h1>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                   USDT {minValue} / BRL {minValueBRL}
@@ -127,12 +117,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
               </div>
 
               <div className="text-black">
-                <div className="flex items-center justify-between gap-2">
-                  <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                    Modalidade
-                  </h1>
+                <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                  Modalidade
                   <InterrogacaoIcon />
-                </div>
+                </h1>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                   {item.modality}
@@ -146,12 +134,10 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
               </div>
 
               <div className="text-black">
-                <div className="flex items-center justify-between gap-2">
-                  <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                    Quantidade
-                  </h1>
+                <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                  Quantidade
                   <InterrogacaoIcon />
-                </div>
+                </h1>
 
                 <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                   {item.quantity} @
@@ -171,7 +157,7 @@ export default function CiclosViewInfoSection({ item }: { item: ICiclo }) {
           <DateInfo date={item.closingDate} />
           <div
             onClick={() => setShowModalComprarCotas(true)}
-            className="flex w-[40%] h-[50px]"
+            className="flex w-1/3 h-[50px]"
           >
             <BtnRoxo>PARTICIPAR DO CICLO</BtnRoxo>
           </div>

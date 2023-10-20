@@ -14,11 +14,11 @@ export default function CiclosViewPerfil() {
             alt="PerfilBanner"
           />
         </div>
-        <div className="lg:absolute rounded-xl border-4 shadow-2xl border-white -mt-24 lg:-mt-0 lg:top-[240px] lg:left-[10%] w-[230px] h-[200px]">
+        <div className="lg:absolute rounded-xl overflow-hidden border-4 shadow-2xl border-white -mt-24 lg:-mt-0 lg:top-[240px] lg:left-[10%] w-[230px] h-[200px]">
           <img
             src={selectedCicle?.thumbnail}
             draggable={false}
-            className="rounded-xl w-full h-full shadow-2xl"
+            className="w-full h-full shadow-2xl"
             alt="vaquinha2"
           />
         </div>

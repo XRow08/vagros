@@ -37,14 +37,12 @@ export default function CicleCard({ item }: { item: ICiclo }) {
             </div>
 
             <div className="text-black">
-              <div className="flex items-center justify-between gap-2">
-                <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                  Stake Beef
-                </h1>
+              <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                Stake Beef
                 <InterrogacaoIcon />
-              </div>
+              </h1>
 
-              <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
+              <h2 className="font-archivo font-semibold text-20 leading-normal tracking-wide">
                 {item.stakeBeef}% APY
               </h2>
             </div>
@@ -56,12 +54,10 @@ export default function CicleCard({ item }: { item: ICiclo }) {
             </div>
 
             <div className="text-black">
-              <div className="flex items-center justify-between gap-2">
-                <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                  Valor mínimo
-                </h1>
+              <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                Valor mínimo
                 <InterrogacaoIcon />
-              </div>
+              </h1>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                 USDT {minValue} / BRL {minValueBRL}
@@ -74,12 +70,10 @@ export default function CicleCard({ item }: { item: ICiclo }) {
               <Diamond />
             </div>
             <div className="text-black">
-              <div className="flex items-center justify-between gap-2">
-                <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                  Valor do ciclo
-                </h1>
+              <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                Valor do ciclo
                 <InterrogacaoIcon />
-              </div>
+              </h1>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                 USDT {totalValue} / BRL {totalValueBRL}
@@ -92,12 +86,10 @@ export default function CicleCard({ item }: { item: ICiclo }) {
               <Relogio />
             </div>
             <div className="text-black">
-              <div className="flex items-center justify-between gap-2">
-                <h1 className="text-black font-archivo font-normal text-20 leading-normal tracking-wide">
-                  Prazo
-                </h1>
+              <h1 className="flex items-center gap-2 font-archivo font-normal text-20 leading-normal tracking-wide">
+                Prazo
                 <InterrogacaoIcon />
-              </div>
+              </h1>
 
               <h2 className="text-black font-archivo font-semibold text-20 leading-normal tracking-wide">
                 150 dias

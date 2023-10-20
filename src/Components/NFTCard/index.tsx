@@ -31,7 +31,8 @@ export default function NFTCard({ item }: { item: INFT }) {
 
           <img
             src={selectedCicle?.thumbnail}
-            className="h-full w-full cover rounded-t-lg"
+            className="h-full w-full object-cover rounded-t-lg"
+            draggable={false}
             alt="vaquinha2"
           />
         </div>

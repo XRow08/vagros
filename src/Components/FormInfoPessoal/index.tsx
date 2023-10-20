@@ -1,8 +1,11 @@
-import Link from "next/link";
 import BtnRoxo from "../BtnRoxo";
 import Xwhite from "../Icons/Xwhite";
 
-export default function FormInfoPessoal() {
+export default function FormInfoPessoal({
+  setState,
+}: {
+  setState: () => void;
+}) {
   return (
     <div className="flex flex-col items-center p-4 w-[400px] h-[450px] bg-[#212121] rounded-lg shadow-lg ">
       <div className="flex flex-col justify-between items-center w-full h-full">
@@ -43,7 +46,7 @@ export default function FormInfoPessoal() {
           />
         </div>
 
-        <div className="w-[65%] h-[50px]">
+        <div onClick={setState} className="w-[65%] h-[50px]">
           <BtnRoxo>CONTINUAR</BtnRoxo>
         </div>
       </div>

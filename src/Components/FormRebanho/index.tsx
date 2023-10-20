@@ -1,7 +1,21 @@
+import toast from "react-hot-toast";
 import BtnRoxo from "../BtnRoxo";
 import Xwhite from "../Icons/Xwhite";
+import { useRouter } from "next/navigation";
 
 export default function FormRebanho() {
+  const { push } = useRouter();
+
+  async function onSubmit() {
+    toast.success("Formulario enviado!");
+    toast.loading("Redirecionando para a Home... Aguarde.", {
+      duration: 3000,
+    });
+    setTimeout(() => {
+      push("/");
+    }, 3000);
+  }
+
   return (
     <div className="flex flex-col items-center p-4 px-8 w-[800px]  bg-[#212121] rounded-lg shadow-lg ">
       <div className="flex flex-col gap-8 items-center w-full h-full">
@@ -10,7 +24,7 @@ export default function FormRebanho() {
             REBANHO A LEILOAR
           </h1>
           <div className="absolute right-0 top-3">
-            <Xwhite></Xwhite>
+            <Xwhite />
           </div>
         </div>
 
@@ -88,7 +102,10 @@ export default function FormRebanho() {
               </div>
             </div>
           </div>
-          <div className="flex w-[40%] h-[50px] cursor-pointer">
+          <div
+            onClick={onSubmit}
+            className="flex w-[40%] h-[50px] cursor-pointer"
+          >
             <BtnRoxo>CONCLUIR E ENVIAR</BtnRoxo>
           </div>
         </div>
