@@ -45,7 +45,7 @@ export default function NFTCard({
 
         <div className="flex items-center justify-between py-1 mx-[5%] pt-2">
           <h1 className="text-black font-bold text-lg leading-normal tracking-wide">
-            Nelore #{index}
+            Nelore #{index + 1}
           </h1>
           <div>
             <Polygon />
