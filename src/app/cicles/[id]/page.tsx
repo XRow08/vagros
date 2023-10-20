@@ -56,7 +56,7 @@ export default function CiclesId({ params }: { params: { id: string } }) {
         />
         <div className="border-b-[1px] border-[#252525] border-opacity-25 w-full my-4" />
         <a
-          href={`/auction/${selectedCicle?.id}`}
+          href={`/auction/${selectedCicle?.cycleId}`}
           className="lg:hidden flex w-full lg:w-[25%] h-[50px]"
         >
           <BtnRoxo>VISUALIZAR LEILÃO</BtnRoxo>

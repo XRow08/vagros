@@ -31,7 +31,7 @@ export default function CiclosViewPerfil() {
             <CiclosViewInfo />
             <div className="border-b-[1px] border-[#252525] border-opacity-25 w-full lg:hidden block my-4" />
             <a
-              href={`/auction/${selectedCicle?.id}`}
+              href={`/auction/${selectedCicle?.cycleId}`}
               className="hidden lg:flex w-full lg:w-[25%] h-[56px]"
             >
               <BtnRoxo>VISUALIZAR LEILÃO</BtnRoxo>
